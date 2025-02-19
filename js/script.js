@@ -17,36 +17,36 @@ const characterData = [
         "id": 3,
         "name": "Fillaform",
         "industry": "Customer Support",
-        "image": "char3.png",
-        "video": "placeholder.mp4"
+        "image": "images/characters/char3.png",
+        "video": "videos/placeholder.mp4"
     },
     {
         "id": 4,
         "name": "Scholar",
         "industry": "Edu/Universities",
-        "image": "char4.png",
-        "video": "placeholder.mp4"
+        "image": "images/characters/char4.png",
+        "video": "videos/placeholder.mp4"
     },
     {
         "id": 5,
         "name": "GuestGuide",
         "industry": "Hospitality",
-        "image": "char5.png",
-        "video": "placeholder.mp4"
+        "image": "images/characters/char5.png",
+        "video": "videos/placeholder.mp4"
     },
     {
         "id": 6,
         "name": "Navigator",
         "industry": "Business Operations",
-        "image": "char6.png",
-        "video": "placeholder.mp4"
+        "image": "images/characters/char6.png",
+        "video": "videos/placeholder.mp4"
     },
     {
         "id": 7,
         "name": "The Home Ranger",
         "industry": "Real Estate",
-        "image": "char7.png",
-        "video": "placeholder.mp4"
+        "image": "images/characters/char7.png",
+        "video": "videos/placeholder.mp4"
     }
 ];
 
