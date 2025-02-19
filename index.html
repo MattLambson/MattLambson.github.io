@@ -4,33 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Heroes - Character Selection</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="background-overlay"></div>
     
     <audio id="bgMusic" loop>
-        <source src="{{ url_for('static', filename='audio/background.mp3') }}" type="audio/mp3">
+        <source src="audio/background.mp3" type="audio/mp3">
     </audio>
-
     <div class="game-container">
         <h1>Select Your Industry Hero</h1>
         
         <div class="character-grid">
-            {% for character in characters %}
-            <div class="character-card" data-id="{{ character.id }}">
-                <div class="character-frame">
-                    <img src="{{ url_for('static', filename='characters/' + character.image) }}" 
-                         alt="{{ character.name }}" 
-                         class="character-image">
-                </div>
-                <div class="character-info">
-                    <div class="character-name">{{ character.name }}</div>
-                    <div class="character-industry">{{ character.industry }}</div>
-                </div>
-            </div>
-            {% endfor %}
+            <!-- Characters will be dynamically inserted here -->
         </div>
 
         <div class="controls-hint">
@@ -39,7 +26,6 @@
             <p>Press M to toggle music</p>
         </div>
 
-        <!-- Video Modal -->
         <div id="videoModal" class="modal">
             <div class="modal-content">
                 <span class="close-button">&times;</span>
@@ -52,13 +38,11 @@
             </div>
         </div>
 
-        <!-- Loading Overlay -->
         <div id="loadingOverlay" class="loading-overlay">
             <div class="loading-spinner"></div>
             <div class="loading-text">Loading...</div>
         </div>
     </div>
-
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
