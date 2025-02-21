@@ -6,11 +6,12 @@
 }
 
 :root {
-    --primary-color: #1B3B6F;
-    --secondary-color: #284B8C;
-    --text-light: #ffffff;
-    --text-dark: #333333;
-    --accent-color: #4A699C;
+    --primary-color: #000000;      /* Black */
+    --secondary-color: #333333;    /* Dark gray for hover states */
+    --text-light: #ffffff;         /* White */
+    --text-dark: #000000;          /* Black */
+    --accent-color: #666666;       /* Medium gray for accents */
+    --background-light: #f5f5f5;   /* Light gray background */
 }
 
 body {
@@ -71,7 +72,7 @@ body {
 .main-content {
     flex: 1;
     padding: 60px;
-    background-color: #f5f7fa;
+    background-color: var(--background-light);
     display: flex;
     flex-direction: column;
     justify-content: center;
