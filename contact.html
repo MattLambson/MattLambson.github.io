@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Your Name</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Add Calendly stylesheet -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <style>
+        /* Previous styles remain the same */
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 1.4em;
+        }
+
+        .contact-info p {
+            margin: 20px 0;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1em;
+        }
+
+        .contact-info i {
+            color: var(--primary-color);
+            width: 24px;
+            font-size: 1.2em;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .calendly-link {
+            cursor: pointer;
+            color: var(--accent-color) !important;
+            font-weight: 500;
+        }
+
+        .calendly-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        .calendly-blue {
+            color: #006BFF !important;
+        }
+
+        /* Optional: Add animation for the widget */
+        .calendly-overlay .calendly-popup {
+            animation: calendlyPopup 0.3s ease-out;
+        }
+
+        @keyframes calendlyPopup {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                margin: 20px;
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="assets/images/profile.jpg" alt="Profile" class="profile-image">
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">My Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="contact-container">
+            <h1 class="section-title">Contact Me</h1>
+            
+            <div class="contact-info">
+                <h3>Let's Connect</h3>
+                <p><i class="fas fa-envelope"></i> your.email@example.com</p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/mattlambson/" target="_blank">LinkedIn Profile</a></p>
+                <p><i class="fab fa-github"></i> <a href="https://github.com/MattLambson" target="_blank">GitHub Profile</a></p>
+                <p><i class="far fa-calendar-alt calendly-blue"></i> 
+                    <span class="calendly-link" onclick="openCalendly()">Schedule a Meeting</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calendly scripts -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script>
+        function openCalendly() {
+            Calendly.initPopupWidget({
+                url: 'YOhttps://calendly.com/lambson',
+                // Optional settings:
+                prefill: {
+                    // email: "visitor@example.com",  // Pre-fill visitor's email if known
+                    // firstName: "Visitor",          // Pre-fill visitor's name if known
+                },
+                customColors: {
+                    primary: "#1B3B6F",              // Match your site's primary color
+                },
+                hideEventTypeDetails: false,          // Show/hide event details
+                hideGdprBanner: true,                // Hide GDPR banner if not needed
+                hideLanding: false,                  // Show landing page
+            });
+        }
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
