@@ -94,7 +94,7 @@ body {
 }
 
 .name span {
-    color: var(--text-light);
+    color: #F18500; /* Orange */
 }
 
 .title {
