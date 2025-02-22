@@ -12,6 +12,7 @@
     --text-dark: #ffffff;          /* Changed to white */
     --accent-color: #ffffff;       /* Changed to white */
     --background-dark: #000000;    /* Black background */
+    --orange-accent: #F18500;      /* Orange for name */
 }
 
 body {
@@ -94,7 +95,7 @@ body {
 }
 
 .name span {
-    color: #F18500; /* Orange */
+    color: var(--orange-accent);  /* Orange name */
 }
 
 .title {
@@ -167,6 +168,13 @@ body {
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
 
+/* Section Titles */
+.section-title {
+    color: var(--text-light);
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
 /* Projects Page Styles */
 .projects-grid {
     display: grid;
@@ -181,7 +189,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s;
+    transition: all 0.3s;
     width: 300px;
     height: 400px;
     display: flex;
@@ -247,9 +255,9 @@ body {
 
 .contact-info {
     background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 40px;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: 30px;
 }
 
@@ -260,8 +268,8 @@ body {
 }
 
 .contact-info p {
-    margin: 20px 0;
     color: var(--text-light);
+    margin: 20px 0;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -281,8 +289,30 @@ body {
 }
 
 .contact-info a:hover {
-    opacity: 0.8;
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: underline;
+}
+
+/* About Page Styles */
+.about-content {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 30px;
+    color: var(--text-light);
+}
+
+.about-section h2 {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.about-section p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 15px;
 }
 
 /* Responsive Design */
