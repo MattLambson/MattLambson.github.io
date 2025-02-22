@@ -192,11 +192,18 @@ body {
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative; /* Added for hover state handling */
 }
 
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    height: auto; /* Allow height to expand on hover */
+    z-index: 1; /* Ensure expanded card stays on top */
+}
+.project-card:hover .project-description {
+    display: block; /* Show full text */
+    -webkit-line-clamp: unset; /* Remove line clamp on hover */
 }
 
 .project-image {
@@ -213,6 +220,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: all 0.3s ease;
 }
 
 .project-title {
@@ -228,11 +236,12 @@ body {
     line-height: 1.6;
     display: -webkit-box;
     display: box;
-    -webkit-line-clamp: 10;
-    line-clamp: 10;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     box-orient: vertical;
     overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .project-link {
