@@ -8,90 +8,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <!-- Add Calendly stylesheet -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <style>
-        /* Previous styles remain the same */
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact-info {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-top: 30px;
-        }
-
-        .contact-info h3 {
-            color: var(--primary-color);
-            margin-bottom: 30px;
-            font-size: 1.4em;
-        }
-
-        .contact-info p {
-            margin: 20px 0;
-            color: var(--text-dark);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 1.1em;
-        }
-
-        .contact-info i {
-            color: var(--primary-color);
-            width: 24px;
-            font-size: 1.2em;
-        }
-
-        .contact-info a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .contact-info a:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
-
-        .calendly-link {
-            cursor: pointer;
-            color: var(--accent-color) !important;
-            font-weight: 500;
-        }
-
-        .calendly-link:hover {
-            color: var(--primary-color) !important;
-        }
-
-        .calendly-blue {
-            color: #006BFF !important;
-        }
-
-        /* Optional: Add animation for the widget */
-        .calendly-overlay .calendly-popup {
-            animation: calendlyPopup 0.3s ease-out;
-        }
-
-        @keyframes calendlyPopup {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .contact-info {
-                margin: 20px;
-                padding: 25px;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="sidebar">
@@ -109,12 +25,14 @@
             <h1 class="section-title">Contact Me</h1>
             
             <div class="contact-info">
-                <h3>Let's Connect</h3>
-                <p><i class="fas fa-envelope"></i> matthew.lambson@gmail.com</p>
+                <h3>Let's Connect!</h3>
+                <p><i class="fas fa-envelope"></i> 
+                    <a href="mailto:matthew.lambson@gmail.com">matthew.lambson@gmail.com</a>
+                </p>
                 <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/mattlambson/" target="_blank">LinkedIn Profile</a></p>
                 <p><i class="fab fa-github"></i> <a href="https://github.com/MattLambson" target="_blank">GitHub Profile</a></p>
                 <p><i class="far fa-calendar-alt calendly-blue"></i> 
-                    <span class="calendly-link" onclick="openCalendly()">Schedule a Meeting</span>
+                    <span class="calendly-link" onclick="openCalendly()">Schedule a Meeting With Me!</span>
                 </p>
             </div>
         </div>
