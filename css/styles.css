@@ -387,3 +387,48 @@ body {
         text-align: center;
     }
 }
+
+/* Project detail page spacing */
+.section-spacer {
+    margin-bottom: 40px;
+}
+
+.project-description-container h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.project-description-container h3 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.project-description-container p {
+    margin-bottom: 24px;
+}
+
+.project-description-container ul {
+    margin-bottom: 32px;
+}
+
+.content-divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 40px 0;
+    width: 100%;
+}
+
+.project-tech {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.tech-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
