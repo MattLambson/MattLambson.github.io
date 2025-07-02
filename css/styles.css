@@ -1773,3 +1773,19 @@ html {
         justify-content: center;
     }
 }
+@media (max-width: 768px) {
+    .top-nav {
+        position: relative; /* Change from fixed to relative on mobile */
+        background: var(--bg-card);
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .main-content {
+        padding-top: 0; /* Remove top padding since nav isn't fixed */
+    }
+    
+    .nav-menu {
+        top: 100%;
+        right: 0;
+    }
+}
