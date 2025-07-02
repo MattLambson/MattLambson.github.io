@@ -48,7 +48,7 @@ body {
     display: flex;
     align-items: center;
     gap: 30px;
-    justify-content: flex-end; /* Moves buttons to the right */
+    justify-content: flex-end;
 }
 
 .theme-toggle {
@@ -73,23 +73,19 @@ body {
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
-/* Top Navigation - Fixed overlap issues */
+/* Top Navigation - Pinned to top, not floating */
 .top-nav {
-    position: fixed;
+    position: relative;
     top: 0;
     right: 0;
-    z-index: 1002; /* Increased z-index */
+    z-index: 1002;
     padding: 20px 40px;
-    background: linear-gradient(90deg, 
-        rgba(15, 22, 41, 0.95) 0%, 
-        rgba(15, 22, 41, 0.98) 100%); /* More opaque background */
-    backdrop-filter: blur(10px);
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
 }
 
 [data-theme="light"] .top-nav {
-    background: linear-gradient(90deg, 
-        rgba(241, 245, 249, 0.95) 0%, 
-        rgba(241, 245, 249, 0.98) 100%);
+    background: var(--bg-card);
 }
 
 .nav-menu {
@@ -119,7 +115,7 @@ body {
 
 /* Mobile hamburger menu - ONLY shows on mobile */
 .mobile-menu-btn {
-    display: none; /* Hidden by default (desktop) */
+    display: none;
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     color: var(--text-primary);
@@ -140,9 +136,9 @@ body {
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
-/* Main Content - Increased padding to prevent overlap */
+/* Main Content - Remove extra padding since nav isn't fixed */
 .main-content {
-    padding-top: 100px; /* Increased from 80px */
+    padding-top: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -514,7 +510,6 @@ html {
     margin-bottom: 20px;
     line-height: 1.6;
     font-size: 15px;
-    /* Line clamp setup for truncation */
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
@@ -522,7 +517,6 @@ html {
     overflow: hidden;
 }
 
-/* Remove line-clamp on hover to show full text */
 .project-card:hover .project-description {
     display: block;
     -webkit-line-clamp: unset;
@@ -1273,12 +1267,10 @@ html {
 /* Mobile styles - Updated to handle landscape mode */
 @media (max-width: 1024px) and (max-height: 768px), 
        (max-width: 768px) {
-    /* Show hamburger menu on mobile OR landscape orientation */
     .mobile-menu-btn {
         display: flex;
     }
     
-    /* Hide desktop menu on mobile */
     .nav-menu {
         display: none;
         position: absolute;
@@ -1295,7 +1287,6 @@ html {
         z-index: 1001;
     }
     
-    /* Show menu when active */
     .nav-menu.mobile-active {
         display: flex;
     }
@@ -1319,23 +1310,17 @@ html {
         border-bottom: none;
     }
     
-    /* Center social icons on mobile */
     .social-icons {
         justify-content: center;
     }
     
-    /* Mobile nav adjustments */
     .top-nav {
-        background: rgba(15, 22, 41, 0.98); /* More solid on mobile */
+        background: var(--bg-card);
         padding: 15px 20px;
     }
     
-    [data-theme="light"] .top-nav {
-        background: rgba(241, 245, 249, 0.98);
-    }
-    
     .main-content {
-        padding-top: 85px; /* Adjust for mobile */
+        padding-top: 0;
     }
 }
 
@@ -1478,7 +1463,6 @@ html {
         padding: 25px;
     }
     
-    /* Responsive tab adjustments */
     .project-tabs {
         max-width: 100%;
         margin-bottom: 30px;
@@ -1495,7 +1479,6 @@ html {
         font-size: 16px;
     }
     
-    /* Responsive adjustments for project detail */
     .project-detail-image-container {
         padding: 25px;
     }
@@ -1516,7 +1499,6 @@ html {
         padding: 20px 25px;
     }
     
-    /* Responsive adjustments for contact */
     .contact-info,
     .contact-cta {
         padding: 30px 25px;
@@ -1545,7 +1527,6 @@ html {
         padding-left: 25px;
     }
     
-    /* Responsive Design for How I Work */
     .work-section {
         padding: 30px 25px;
         margin-bottom: 30px;
@@ -1593,7 +1574,7 @@ html {
 
 @media (max-width: 480px) {
     .main-content {
-        padding-top: 80px;
+        padding-top: 0;
     }
     
     .profile-image {
