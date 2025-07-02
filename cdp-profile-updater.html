@@ -3,60 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CM.com Customer Data Platform Profile Updater - Matt Lambson</title>
+    <title>Matt Lambson | CM.com Customer Data Platform Profile Updater</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="sidebar">
-        <img src="/assets/images/profile.jpeg" alt="Profile" class="profile-image">
-        <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">My Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </div>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Who I Am</a></li>
+                <li class="active"><a href="projects.html">What I've Done</a></li>
+                <li><a href="how-i-work.html">How I Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
     <div class="main-content">
-        <h1 class="section-title">CM.com Customer Data Platform Profile Updater</h1>
+        <div class="page-header">
+            <h1 class="page-title">CM.com Customer Data Platform Profile Updater</h1>
+            <p class="page-subtitle">A streamlined CSV processor for batch customer profile management</p>
+        </div>
         
-        <div class="project-detail">
-            <img src="/assets/images/projects/cdpCSVProcessor.png" alt="CDP Profile Updater Screenshot" class="project-detail-image">
-            
-            <div class="project-description-container">
-                <h2 class="section-spacer">Project Purpose</h2>
-                <p>The CM.com Customer Data Platform (CDP) Profile Updater application was designed as a demo and testing tool to be able to quickly upload a customer's CSV file to their Customer Data Platform environment. This application utilizes the corresponding CM.com API calls and is meant to simulate the customer making these API calls directly.</p>
+        <div class="content-container">
+            <div class="project-detail">
+                <div class="project-detail-image-container">
+                    <img src="assets/images/projects/cdpCSVProcessor.png" alt="CDP Profile Updater Screenshot" class="project-detail-image">
+                </div>
                 
-                <div class="content-divider"></div>
+                <div class="project-description-container">
+                    <div class="project-section">
+                        <h2>Project Purpose</h2>
+                        <p>The CM.com Customer Data Platform (CDP) Profile Updater application was designed as a demo and testing tool to be able to quickly upload a customer's CSV file to their Customer Data Platform environment. This application utilizes the corresponding CM.com API calls and is meant to simulate the customer making these API calls directly.</p>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h3>Key Features</h3>
+                        <ul class="feature-list">
+                            <li>Batch upload functionality for updating multiple profiles simultaneously</li>
+                            <li>Real-time tracking of how many profiles have been processed while running</li>
+                            <li>CSV file validation and error handling for data integrity</li>
+                            <li>Progress indicators and status updates during processing</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h3>Business Benefits</h3>
+                        <p>This application serves as a quick and easy way to demonstrate CM.com's CDP API for uploading and updating User Profiles. It provides several key advantages:</p>
+                        <ul class="feature-list">
+                            <li>Streamlined demonstration of CDP capabilities during sales presentations</li>
+                            <li>Simplified bulk data management for testing and demo scenarios</li>
+                            <li>Reduced complexity compared to direct API integration for non-technical users</li>
+                            <li>Real-time feedback on data processing operations</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-section project-tech">
+                        <h3>Technologies Used</h3>
+                        <p>The CDP Profile Updater was developed with a focus on usability for non-technical users while maintaining robust data handling capabilities. The application interfaces directly with CM.com's CDP API, providing a more streamlined experience compared to the standard web interface.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Tkinter</span>
+                            <span class="tech-tag">CustomTkinter</span>
+                            <span class="tech-tag">CM.com APIs</span>
+                            <span class="tech-tag">CSV Processing</span>
+                        </div>
+                    </div>
+                </div>
                 
-                <h3>Key Features:</h3>
-                <ul>
-                    <li>Batch upload functionality for updating multiple profiles simultaneously</li>
-                    <li>Real-time tracking of how many profiles have been processed while running</li>
-                </ul>
-                
-                <div class="content-divider"></div>
-                
-                <h3>Business Benefits</h3>
-                <p>This application serves as a quick and easy way to demonstrate CM.com's CDP API for uploading and updating User Profiles</p>
-                
-                
-                
-                <div class="project-tech">
-                    <h3>Technologies Used:</h3>
-                    <p>The CDP Profile Updater was developed with a focus on usability for non-technical users while maintaining robust data handling capabilities. The application interfaces directly with CM.com's CDP API, providing a more streamlined experience compared to the standard web interface.</p>
-                    <ul class="tech-tag-list">
-                        <li class="tech-tag">Python</li>
-                        <li class="tech-tag">Tkinter</li>
-                        <li class="tech-tag">CustomTkinter</li>
-                        <li class="tech-tag">CM.com APIs</li>
-                    </ul>
+                <div class="project-navigation">
+                    <a href="projects.html" class="back-link">
+                        <i class="fas fa-arrow-left"></i> Back to Projects
+                    </a>
                 </div>
             </div>
         </div>
-        
-        <a href="projects.html" class="back-link">← Back to Projects</a>
     </div>
+    
+    <footer class="footer">
+        <p>&copy; 2025 Matt Lambson. Built with HTML/CSS/JS, very late nights and way too much caffeine.</p>
+    </footer>
+    
     <script src="js/main.js"></script>
 </body>
-</html> 
+</html>

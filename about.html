@@ -3,68 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Matt Lambson</title>
+    <title>Matt Lambson | Who I Am</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+</head>
 <body>
-    <div class="sidebar">
-        <img src="/assets/images/profile.jpeg" alt="Profile" class="profile-image">
-        <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">My Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </div>
-
+    <nav class="top-nav">
+        <div class="nav-container">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">What I've Done</a></li>
+                <li><a href="how-i-work.html">How I Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
     <div class="main-content">
-        <h1 class="section-title">About Me</h1>
+        <div class="page-header">
+            <h1 class="page-title">Who I Am</h1>
+            <p class="page-subtitle">A Sales Engineer's journey through technology, storytelling, and human connection</p>
+        </div>
         
-        <div class="about-content">
-            <div class="about-section">
-                <h2>Who I Am</h2>
-                <p>Hey there! I’m a Sales Engineer and Demo Systems Specialist with over 15 years of experience across pre-sales and post-sales roles. I’ve always been drawn to technology. Not just how it works, but how it can be used to tell better stories, drive clarity, and create impact across go-to-market teams.</p>
-                <p>My focus these days is on building scalable demo environments, internal tooling, and AI-powered bots that help Sales, Product, and Enablement teams show up stronger. I love taking complex platforms and turning them into intuitive, high-impact stories that resonate with real buyers.</p>
-                <p>When I’m not working, I’m probably laughing with my three daughters, chasing their curiosity, or tinkering with AI tools and workflows just to see what’s possible. That same curiosity fuels my work, whether it’s testing a new feature, building a custom demo flow, or figuring out how to connect the dots across a product launch.</p>
-                <p>What drives me most is the belief that technical clarity leads to sales confidence. If I can help a rep walk into a meeting feeling prepared, confident, and clear on the “why” behind what they’re showing.. <i>that's</i> a win.</p>
-            </div>
-
-            <div class="about-section">
-                <h2>My Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Technical Expertise</h3>
-                        <ul class="skill-list">
-                            <li>REST API, JSON, XML</li>
-                            <li>SaaS, CPaaS, DaaS</li>
-                            <li>LLMs, AI, Agentic AI</li>
-                            <li>Business Messaging (SMS/Omnichannel)</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Personal Strengths</h3>
-                        <ul class="skill-list">
-                            <li>Strategic Communicator & Collaborator</li>
-                            <li>Product Evangelist and Storyteller</li>
-                            <li>Client-Focused Approach, Outcome-driven</li>
-                            <li>Innovative Problem Solver</li>
-                            <li>Coach & Trainer</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Tools & Technology</h3>
-                        <ul class="skill-list">
-                            <li><b>AI & Automation:</b> ChatGPT, Claude, HALO (CM.com), Gemini, HuggingFace</li>
-                            <li><b>Dev & Testing:</b> Postman, REST APIs</li>
-                            <li><b>Productivity:</b> Notion, Confluence, Loom</li>
-                            <li><b>Docs & Data:</b> JSON, CSV, Markdown, JIRA, Zendesk</li>
-                        </ul>
+        <div class="content-container">
+            <div class="about-content">
+                <div class="about-section">
+                    <h2>My Story</h2>
+                    <p>Hey there. I'm a Sales Engineer with over 15 years of experience across pre-sales and post-sales roles. I've always been drawn to technology—not just how it works, but how it can be used to tell better stories, solve real problems, and create impact across go-to-market teams.</p>
+                    
+                    <p>These days, my focus is on building scalable demo environments, internal tools, and AI-powered workflows that help Sales, Product, and Enablement teams show up stronger. I love turning complex platforms into intuitive, high-impact experiences that resonate with real buyers.</p>
+                    
+                    <p>Outside of work, I'm usually hanging out with my three daughters, playing adult recreational kickball, trying new AI trends, building side projects, or experimenting with new tools just to see what I can create. That same curiosity drives my professional work—whether it's testing a new feature, designing a custom demo, or helping a team connect the dots across a product launch.</p>
+                    
+                    <p>At the core of it all is a belief: when technical clarity meets storytelling, sales confidence follows. If I can help a rep walk into a meeting feeling prepared and clear on the "why," that's a win.</p>
+                </div>
+                
+                <div class="about-section">
+                    <h2>What I Bring to the Table</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Technical Expertise</h3>
+                            <ul class="skill-list">
+                                <li>REST API, JSON, XML</li>
+                                <li>SaaS, CPaaS, DaaS</li>
+                                <li>LLMs, AI, Agentic AI</li>
+                                <li>Business Messaging (SMS/Omnichannel)</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Personal Strengths</h3>
+                            <ul class="skill-list">
+                                <li>Strategic Communicator & Collaborator</li>
+                                <li>Product Evangelist and Storyteller</li>
+                                <li>Client-Focused Approach, Outcome-driven</li>
+                                <li>Innovative Problem Solver</li>
+                                <li>Coach & Trainer</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Tools & Technology</h3>
+                            <ul class="skill-list">
+                                <li><b>AI & Automation:</b> ChatGPT, Claude, HALO (CM.com), Gemini, HuggingFace</li>
+                                <li><b>Dev & Testing:</b> Postman, REST APIs</li>
+                                <li><b>Productivity:</b> Notion, Confluence, Loom</li>
+                                <li><b>Docs & Data:</b> JSON, CSV, Markdown, JIRA, Zendesk</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    
+    <footer class="footer">
+        <p>&copy; 2025 Matt Lambson. Built with HTML/CSS/JS, very late nights and way too much caffeine.</p>
+    </footer>
+    
     <script src="js/main.js"></script>
 </body>
 </html>

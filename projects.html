@@ -3,91 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects - Matt Lambson</title>
+    <title>Matt Lambson | What I've Done</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="sidebar">
-        <img src="/assets/images/profile.jpeg" alt="Profile" class="profile-image">
-        <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">My Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </div>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Who I Am</a></li>
+                <li><a href="how-i-work.html">How I Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
     <div class="main-content">
-        <h1 class="section-title">My Projects</h1>
-        
-        <!-- Websites / Demo Pages Section -->
-        <h2 class="pillar-title">Websites / Demo Pages</h2>
-        <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <img src="/assets/images/projects/industryHeroes.png" alt="Tech Heroes" class="project-image">
-                <div class="project-info">
-                    <h3 class="project-title">Industry Agents</h3>
-                    <p class="project-description">An interactive character selection interface showcasing industry-specific AI assistants. When a character is selected, a video is played to give a short preview of how CM.com's HALO can automate those kinds of experiences through Agentic AI and Tools. I built this project so that it could be used at a trade show on a touchscreen monitor (so people passing by had a fun way to learn more about what we can do without sitting through a full demo).</p>
-                    <a href="https://MattLambson.github.io/industry-agents/" class="project-link">View Project →</a>
-                </div>
-            </div>
-            
-            <!-- Project 2 -->
-            <div class="project-card">
-                <img src="/assets/images/projects/HALOHub.png" alt="Portfolio Website" class="project-image">
-                <div class="project-info">
-                    <h3 class="project-title">CM.com North America Halo Demo Hub</h3>
-                    <p class="project-description">This is the CM.com North America Halo Demo Hub, where team members can showcase fully customized demos of CM.com’s HALO solution. Each user has a dedicated space to create personalized chatbot demos by uploading a screenshot of a business’s webpage and tailoring the HALO chatbot experience to that customer. I built this project so that all team members had a dedicated place to explore and test the capabilities of HALO, while also giving them a space to demo the product in a tailored way.</p>
-                    <a href="https://mattlambson.github.io/HaloDemoPages/" class="project-link">View Project →</a>
-                </div>
-            </div>
-
-             <!-- Project 3 -->
-            <div class="project-card">
-                <img src="/assets/images/projects/BitCRM.png" alt="Portfolio Website" class="project-image">
-                <div class="project-info">
-                    <h3 class="project-title">BitCRM</h3>
-                    <p class="project-description">This is a mock-up of a CRM platform meant to mimic a potential client's own CRM solution. This pulls in data from a DummyJSON API call (the client was using PearlDiver to collect data, so this is a way to mimic that). From there, I built out the option to push the CRM profiles over to CM.com's Customer Data Platform (CDP) so that we can demonstrate how automation, workflows, and Email Campaigns can be triggered based on the propteries of the CRM entry.</p>
-                    <a href="https://mattlambson.github.io/HaloDemoPages/DemoPages/matt-lambson/BitCRM/index.html" class="project-link">View Project →</a>
-                </div>
-            </div>
+        <div class="page-header">
+            <h1 class="page-title">What I've Done</h1>
+            <p class="page-subtitle">A collection of demos, tools, and interactive experiences I've built</p>
         </div>
-
-         <!-- Project 4 -->
-            <div class="project-card">
-                <img src="/assets/images/projects/MLResort.png" alt="Portfolio Website" class="project-image">
-                <div class="project-info">
-                    <h3 class="project-title">ML Resort Homepage</h3>
-                    <p class="project-description">This is mock-up of a luxurious resort webpage for a potential client. The demo wasn't necessarily the webpage itself, but more to demonstrate how CM.com can easily add an Agentic AI chatbot to any website.</p>
-                    <a href="https://mattlambson.github.io/HaloDemoPages/DemoPages/matt-lambson/Hospitality/index.html" class="project-link">View Project →</a>
-                </div>
-            </div>
         
-        <!-- UI-Based Apps Section -->
-        <h2 class="pillar-title">UI-Based Apps</h2>
-        <div class="projects-grid">
-            <!-- Project 3 -->
-            <div class="project-card">
-                <img src="/assets/images/projects/business-messaging-detail.png" alt="Business Messaging Demo App" class="project-image">
-                <div class="project-info">
-                    <h3 class="project-title">CM.com Business Messaging Demo App</h3>
-                    <p class="project-description">An interactive demonstration platform showcasing CM.com's business messaging capabilities across multiple channels including SMS, WhatsApp, etc. with real-time preview functionality.</p>
-                    <a href="business-messaging-demo.html" class="project-link">View Project →</a>
+        <div class="content-container">
+            <!-- Tab Navigation -->
+            <div class="project-tabs">
+                <button class="tab-button active" onclick="switchTab('websites')">
+                    <i class="fas fa-globe"></i>
+                    Websites / Demo Pages
+                </button>
+                <button class="tab-button" onclick="switchTab('apps')">
+                    <i class="fas fa-desktop"></i>
+                    UI-Based Apps
+                </button>
+            </div>
+            
+            <!-- Websites / Demo Pages Tab Content -->
+            <div class="tab-content active" id="websites-tab">
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <img src="assets/images/projects/industryHeroes.png" alt="Tech Heroes" class="project-image">
+                        <div class="project-info">
+                            <h3 class="project-title">Industry Agents</h3>
+                            <p class="project-description">An interactive character selection interface showcasing industry-specific AI assistants. When a character is selected, a video is played to give a short preview of how CM.com's HALO can automate those kinds of experiences through Agentic AI and Tools. I built this project so that it could be used at a trade show on a touchscreen monitor (so people passing by had a fun way to learn more about what we can do without sitting through a full demo).</p>
+                            <a href="https://MattLambson.github.io/industry-agents/" class="project-link">View Project →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <img src="assets/images/projects/HALOHub.png" alt="Portfolio Website" class="project-image">
+                        <div class="project-info">
+                            <h3 class="project-title">CM.com North America Halo Demo Hub</h3>
+                            <p class="project-description">This is the CM.com North America Halo Demo Hub, where team members can showcase fully customized demos of CM.com's HALO solution. Each user has a dedicated space to create personalized chatbot demos by uploading a screenshot of a business's webpage and tailoring the HALO chatbot experience to that customer. I built this project so that all team members had a dedicated place to explore and test the capabilities of HALO, while also giving them a space to demo the product in a tailored way.</p>
+                            <a href="https://mattlambson.github.io/HaloDemoPages/" class="project-link">View Project →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <img src="assets/images/projects/BitCRM.png" alt="Portfolio Website" class="project-image">
+                        <div class="project-info">
+                            <h3 class="project-title">BitCRM</h3>
+                            <p class="project-description">This is a mock-up of a CRM platform meant to mimic a potential client's own CRM solution. This pulls in data from a DummyJSON API call (the client was using PearlDiver to collect data, so this is a way to mimic that). From there, I built out the option to push the CRM profiles over to CM.com's Customer Data Platform (CDP) so that we can demonstrate how automation, workflows, and Email Campaigns can be triggered based on the properties of the CRM entry.</p>
+                            <a href="https://mattlambson.github.io/HaloDemoPages/DemoPages/matt-lambson/BitCRM/index.html" class="project-link">View Project →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="project-card">
+                        <img src="assets/images/projects/MLResort.png" alt="Portfolio Website" class="project-image">
+                        <div class="project-info">
+                            <h3 class="project-title">ML Resort Homepage</h3>
+                            <p class="project-description">This is mock-up of a luxurious resort webpage for a potential client. The demo wasn't necessarily the webpage itself, but more to demonstrate how CM.com can easily add an Agentic AI chatbot to any website.</p>
+                            <a href="https://mattlambson.github.io/HaloDemoPages/DemoPages/matt-lambson/Hospitality/index.html" class="project-link">View Project →</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <!-- Project 4 -->
-            <div class="project-card">
-                <img src="/assets/images/projects/cdp-updater-detail.png" alt="CDP Profile Updater" class="project-image">
-                <div class="project-info">
-                    <h3 class="project-title">CM.com Customer Data Platform Profile Updater (CSV Processor)</h3>
-                    <p class="project-description">A streamlined interface for managing and enriching customer profiles in CM.com's Customer Data Platform, featuring batch updates.</p>
-                    <a href="cdp-profile-updater.html" class="project-link">View Project →</a>
+            <!-- UI-Based Apps Tab Content -->
+            <div class="tab-content" id="apps-tab">
+                <div class="projects-grid">
+                    <!-- Project 5 -->
+                    <div class="project-card">
+                        <img src="assets/images/projects/business-messaging-detail.png" alt="Business Messaging Demo App" class="project-image">
+                        <div class="project-info">
+                            <h3 class="project-title">CM.com Business Messaging Demo App</h3>
+                            <p class="project-description">An interactive demonstration platform showcasing CM.com's business messaging capabilities across multiple channels including SMS, WhatsApp, etc. with real-time preview functionality.</p>
+                            <a href="business-messaging-demo.html" class="project-link">View Project →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 6 -->
+                    <div class="project-card">
+                        <img src="assets/images/projects/cdp-updater-detail.png" alt="CDP Profile Updater" class="project-image">
+                        <div class="project-info">
+                            <h3 class="project-title">CM.com Customer Data Platform Profile Updater (CSV Processor)</h3>
+                            <p class="project-description">A streamlined interface for managing and enriching customer profiles in CM.com's Customer Data Platform, featuring batch updates.</p>
+                            <a href="cdp-profile-updater.html" class="project-link">View Project →</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
+    <footer class="footer">
+        <p>&copy; 2025 Matt Lambson. Built with HTML/CSS/JS, very late nights and way too much caffeine.</p>
+    </footer>
+    
     <script src="js/main.js"></script>
 </body>
 </html>

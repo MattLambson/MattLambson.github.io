@@ -3,36 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matt Lambson - Portfolio</title>
+    <title>Matt Lambson | Head of Making it Make Sense</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="sidebar">
-        <img src="/assets/images/profile.jpeg" alt="Profile" class="profile-image">
-        <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">My Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </div>
-
+    <nav class="top-nav">
+        <div class="nav-container">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="about.html">Who I Am</a></li>
+                <li><a href="projects.html">What I've Done</a></li>
+                <li><a href="how-i-work.html">How I Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
     <div class="main-content">
-        <p class="greeting">Hi there, I'm</p>
-        <h1 class="name">MATT<span>LAMBSON</span></h1>
-        <p class="title">Senior Technical Consultant & AI Enthusiast</p>
-
-        <div class="buttons">
-            <a href="contact.html" class="btn btn-primary">Contact Me</a>
+        <div class="hero-section">
+            <div class="profile-container">
+                <img src="assets/images/profile.jpg" alt="Profile" class="profile-image">
+            </div>
+            <div class="content-container">
+                <h1 class="greeting-header">👋 Hi, I'm Matt</h1>
+                <h2 class="hero-subtitle">I build AI-driven solutions that do real work.</h2>
+                <p class="description">From agentic workflows to kick-ass demos, I turn complexity into clarity.</p>
+                <div class="social-icons">
+                    <a href="https://github.com/MattLambson" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mattlambson/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
         </div>
-
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/mattlambson/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/MattLambson" target="_blank"><i class="fab fa-github"></i></a>
+        
+        <div class="bottom-sections" id="projects">
+            <div class="section-card">
+                <h3>Who I Am</h3>
+                <p>I’m a Sales Engineer and AI architect who works at the intersection of storytelling, systems, and scale. I build demos, tools, and workflows that turn complexity into clarity so teams can move faster and sell smarter. Outside of work, you’ll usually find me with my three daughters, exploring new ideas, testing new AI trends, or just building things for the fun of it.</p>
+                <a href="about.html" class="section-link">Find out more about me →</a>
+            </div>
+            <div class="section-card">
+                <h3>What I've Done</h3>
+                <p>From trade show touchscreen interfaces to AI-powered CRM mockups, I build projects that make complex tech feel tangible. These include sales-ready demo environments, real-time chatbot showcases, internal tools for CDP automation, and UI-based platforms that help teams sell smarter and scale faster.</p>
+                <a href="projects.html" class="section-link">Take a look at my projects →</a>
+            </div>
+            <div class="section-card" id="how-i-work">
+                <h3>How I Work</h3>
+                <p>This isn’t just how I build with AI. It’s how I solve problems, design systems, and move projects forward. From prototyping tools to refining sales workflows, this loop keeps me focused, fast, and flexible.</p>
+                <div class="workflow-diagram">
+                    <img src="assets/images/howiwork.png" alt="How I work" class="workflow-background">
+                </div>
+            </div>
         </div>
     </div>
-
+    
+    <footer class="footer">
+        <p>&copy; 2025 Matt Lambson. Built with HTML/CSS/JS, very late nights and way too much caffeine.</p>
+    </footer>
+    
     <script src="js/main.js"></script>
 </body>
 </html>

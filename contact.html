@@ -3,41 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Matt Lambson</title>
+    <title>Matt Lambson | Contact</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <!-- Add Calendly stylesheet -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
-    <div class="sidebar">
-        <img src="/assets/images/profile.jpeg" alt="Profile" class="profile-image">
-        <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">My Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </div>
-
+    <nav class="top-nav">
+        <div class="nav-container">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Who I Am</a></li>
+                <li><a href="projects.html">What I've Done</a></li>
+                <li><a href="how-i-work.html">How I Work</a></li>
+                <li class="active"><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
     <div class="main-content">
-        <div class="contact-container">
-            <h1 class="section-title">Contact Me</h1>
-            
-            <div class="contact-info">
-                <h3>Let's Connect!</h3>
-                <p><i class="fas fa-envelope"></i> 
-                    <a href="mailto:matthew.lambson@gmail.com">matthew.lambson@gmail.com</a>
-                </p>
-                <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/mattlambson/" target="_blank">LinkedIn Profile</a></p>
-                <p><i class="fab fa-github"></i> <a href="https://github.com/MattLambson" target="_blank">GitHub Profile</a></p>
-                <p><i class="far fa-calendar-alt calendly-blue"></i> 
-                    <span class="calendly-link" onclick="openCalendly()">Schedule a Meeting With Me!</span>
-                </p>
+        <div class="page-header">
+            <h1 class="page-title">Let's Connect</h1>
+            <p class="page-subtitle">Ready to explore how AI can transform your workflows? Let's chat about what's possible.</p>
+        </div>
+        
+        <div class="content-container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-methods">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-details">
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:matthew.lambson@gmail.com">matthew.lambson@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <div class="contact-details">
+                                <span class="contact-label">LinkedIn</span>
+                                <a href="https://www.linkedin.com/in/mattlambson/" target="_blank">Connect with me professionally</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <div class="contact-details">
+                                <span class="contact-label">GitHub</span>
+                                <a href="https://github.com/MattLambson" target="_blank">Check out my code</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item calendly-item">
+                            <i class="far fa-calendar-alt"></i>
+                            <div class="contact-details">
+                                <span class="contact-label">Schedule a Meeting</span>
+                                <button class="calendly-button" onclick="openCalendly()">
+                                    Book a time that works for you
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-cta">
+                    <h3>What We Could Discuss</h3>
+                    <ul class="discussion-topics">
+                        <li>AI workflow automation and agentic systems</li>
+                        <li>Custom demo development and sales enablement tools</li>
+                        <li>Technical consulting and solution architecture</li>
+                        <li>Collaboration opportunities and project partnerships</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-
+    
+    <footer class="footer">
+        <p>&copy; 2025 Matt Lambson. Built with HTML/CSS/JS, very late nights and way too much caffeine.</p>
+    </footer>
+    
     <!-- Calendly scripts -->
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <script>
@@ -50,7 +102,7 @@
                     // firstName: "Visitor",          // Pre-fill visitor's name if known
                 },
                 customColors: {
-                    primary: "#1B3B6F",              // Match your site's primary color
+                    primary: "#3b82f6",              // Match your site's blue accent
                 },
                 hideEventTypeDetails: false,          // Show/hide event details
                 hideGdprBanner: true,                // Hide GDPR banner if not needed
