@@ -347,17 +347,17 @@ themeToggle.addEventListener('click', () => {
     }
 });
 
-// Mobile menu functionality
-const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+// Simple mobile menu functionality
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const navMenu = document.getElementById('navMenu');
 
-if (mobileMenuToggle && navMenu) {
-    mobileMenuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('mobile-open');
+if (mobileMenuBtn && navMenu) {
+    mobileMenuBtn.addEventListener('click', function() {
+        navMenu.classList.toggle('mobile-active');
         
-        // Change hamburger icon to X when open
-        const icon = mobileMenuToggle.querySelector('i');
-        if (navMenu.classList.contains('mobile-open')) {
+        // Change icon
+        const icon = mobileMenuBtn.querySelector('i');
+        if (navMenu.classList.contains('mobile-active')) {
             icon.classList.remove('fa-bars');
             icon.classList.add('fa-times');
         } else {
@@ -366,21 +366,11 @@ if (mobileMenuToggle && navMenu) {
         }
     });
 
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
-            navMenu.classList.remove('mobile-open');
-            const icon = mobileMenuToggle.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-    });
-
-    // Close mobile menu when clicking on a link
-    navMenu.addEventListener('click', (e) => {
-        if (e.target.tagName === 'A') {
-            navMenu.classList.remove('mobile-open');
-            const icon = mobileMenuToggle.querySelector('i');
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!mobileMenuBtn.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('mobile-active');
+            const icon = mobileMenuBtn.querySelector('i');
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
         }
