@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Theme Toggle Functionality
+    // Theme Toggle Functionality (Consolidated and Fixed)
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
     const body = document.body;
@@ -10,11 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const savedTheme = localStorage.getItem('theme') || 'dark';
         
         // Apply saved theme
+        body.setAttribute('data-theme', savedTheme);
+        
+        // Update icon based on saved theme
         if (savedTheme === 'light') {
-            body.setAttribute('data-theme', 'light');
             themeIcon.className = 'fas fa-sun';
         } else {
-            body.removeAttribute('data-theme');
             themeIcon.className = 'fas fa-moon';
         }
         
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (currentTheme === 'light') {
                 // Switch to dark
-                body.removeAttribute('data-theme');
+                body.setAttribute('data-theme', 'dark');
                 themeIcon.className = 'fas fa-moon';
                 localStorage.setItem('theme', 'dark');
             } else {
@@ -36,12 +37,70 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Mobile Menu Functionality
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (mobileMenuBtn && navMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('mobile-active');
+            
+            // Change icon
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navMenu.classList.contains('mobile-active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenuBtn.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('mobile-active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+    
+    // Tab Switching Functionality (for projects page)
+    window.switchTab = function(tabName) {
+        // Remove active class from all tab buttons and content
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.classList.remove('active');
+        });
+        document.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.remove('active');
+        });
+        
+        // Add active class to clicked button
+        event.target.classList.add('active');
+        
+        // Show corresponding tab content
+        const targetTab = document.getElementById(tabName + '-tab');
+        if (targetTab) {
+            targetTab.classList.add('active');
+        }
+    };
+    
+    // Make sure the first tab is active by default (for projects page)
+    const firstTab = document.querySelector('.tab-button');
+    const firstContent = document.querySelector('.tab-content');
+    
+    if (firstTab && firstContent) {
+        firstTab.classList.add('active');
+        firstContent.classList.add('active');
+    }
+    
     // Add active class to current page in navigation
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-menu a');
     
     navLinks.forEach(link => {
-        // Check both href and hash links for active state
         const linkHref = link.getAttribute('href');
         if (linkHref === currentPage || 
             (currentPage === 'index.html' && linkHref.startsWith('#'))) {
@@ -84,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Enhanced scroll reveal animation
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', debounce(function() {
         const elements = document.querySelectorAll('.animate-on-scroll');
         elements.forEach(element => {
             if (isElementInViewport(element)) {
@@ -94,30 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Update active navigation based on scroll position
         updateActiveNavOnScroll();
-    });
-    
-    // Function to update active navigation based on scroll position
-    function updateActiveNavOnScroll() {
-        const sections = document.querySelectorAll('section[id], .section-card[id], .bottom-sections');
-        const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
-        
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.parentElement.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.parentElement.classList.add('active');
-            }
-        });
-    }
+    }, 10));
     
     // Enhanced project card interactions (if on projects page)
     const projectCards = document.querySelectorAll('.project-card');
@@ -158,54 +194,12 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Add your form submission logic here
             const formData = new FormData(this);
             const formObject = Object.fromEntries(formData);
             
-            // Example: Show success message
             showNotification('Message sent successfully!', 'success');
-            
-            // Reset form
             this.reset();
         });
-    }
-    
-    // Notification system
-    function showNotification(message, type = 'info') {
-        const notification = document.createElement('div');
-        notification.className = `notification notification-${type}`;
-        notification.textContent = message;
-        
-        notification.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 15px 20px;
-            background: var(--blue-accent);
-            color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            z-index: 9999;
-            transform: translateX(400px);
-            transition: transform 0.3s ease;
-        `;
-        
-        document.body.appendChild(notification);
-        
-        // Animate in
-        setTimeout(() => {
-            notification.style.transform = 'translateX(0)';
-        }, 100);
-        
-        // Remove after 3 seconds
-        setTimeout(() => {
-            notification.style.transform = 'translateX(400px)';
-            setTimeout(() => {
-                if (notification.parentNode) {
-                    notification.parentNode.removeChild(notification);
-                }
-            }, 300);
-        }, 3000);
     }
     
     // Keyboard navigation support
@@ -228,16 +222,41 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Helper function to check if element is in viewport (enhanced)
+// Helper Functions (outside DOMContentLoaded so they're globally available)
+
+// Function to update active navigation based on scroll position
+function updateActiveNavOnScroll() {
+    const sections = document.querySelectorAll('section[id], .section-card[id], .bottom-sections');
+    const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
+    
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 200)) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.parentElement.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.parentElement.classList.add('active');
+        }
+    });
+}
+
+// Helper function to check if element is in viewport
 function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
     const windowHeight = window.innerHeight || document.documentElement.clientHeight;
     const windowWidth = window.innerWidth || document.documentElement.clientWidth;
     
     return (
-        rect.top >= -100 && // Start animation slightly before element is visible
+        rect.top >= -100 && 
         rect.left >= 0 &&
-        rect.bottom <= windowHeight + 100 && // Continue animation slightly after element is visible
+        rect.bottom <= windowHeight + 100 && 
         rect.right <= windowWidth
     );
 }
@@ -255,12 +274,43 @@ function debounce(func, wait) {
     };
 }
 
-// Apply debouncing to scroll event
-const debouncedScroll = debounce(function() {
-    // Any additional scroll logic can go here
-}, 10);
-
-window.addEventListener('scroll', debouncedScroll);
+// Notification system
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.textContent = message;
+    
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 15px 20px;
+        background: var(--blue-accent);
+        color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        z-index: 9999;
+        transform: translateX(400px);
+        transition: transform 0.3s ease;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+        notification.style.transform = 'translateX(400px)';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 3000);
+}
 
 // Add loading states for async operations
 function showLoading(element) {
@@ -271,108 +321,4 @@ function showLoading(element) {
 function hideLoading(element) {
     element.style.opacity = '1';
     element.style.pointerEvents = 'auto';
-}
-
-// Export functions for use in other files (if using modules)
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        isElementInViewport,
-        showNotification,
-        debounce,
-        showLoading,
-        hideLoading
-    };
-}
-// Tab switching functionality
-function switchTab(tabName) {
-    // Remove active class from all tab buttons and content
-    document.querySelectorAll('.tab-button').forEach(button => {
-        button.classList.remove('active');
-    });
-    
-    document.querySelectorAll('.tab-content').forEach(content => {
-        content.classList.remove('active');
-    });
-    
-    // Add active class to clicked button
-    event.target.classList.add('active');
-    
-    // Show corresponding tab content
-    const targetTab = document.getElementById(tabName + '-tab');
-    if (targetTab) {
-        targetTab.classList.add('active');
-    }
-}
-
-// Set default tab on page load
-document.addEventListener('DOMContentLoaded', function() {
-    // Make sure the first tab is active by default
-    const firstTab = document.querySelector('.tab-button');
-    const firstContent = document.querySelector('.tab-content');
-    
-    if (firstTab && firstContent) {
-        firstTab.classList.add('active');
-        firstContent.classList.add('active');
-    }
-});
-// Theme toggle functionality
-const themeToggle = document.getElementById('themeToggle');
-const themeIcon = document.getElementById('themeIcon');
-const body = document.body;
-
-// Check for saved theme preference or default to 'dark'
-const currentTheme = localStorage.getItem('theme') || 'dark';
-body.setAttribute('data-theme', currentTheme);
-
-// Update icon based on current theme
-if (currentTheme === 'light') {
-    themeIcon.classList.remove('fa-moon');
-    themeIcon.classList.add('fa-sun');
-}
-
-themeToggle.addEventListener('click', () => {
-    const currentTheme = body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    
-    // Update icon
-    if (newTheme === 'light') {
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-    } else {
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
-    }
-});
-
-// Simple mobile menu functionality
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const navMenu = document.getElementById('navMenu');
-
-if (mobileMenuBtn && navMenu) {
-    mobileMenuBtn.addEventListener('click', function() {
-        navMenu.classList.toggle('mobile-active');
-        
-        // Change icon
-        const icon = mobileMenuBtn.querySelector('i');
-        if (navMenu.classList.contains('mobile-active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!mobileMenuBtn.contains(e.target) && !navMenu.contains(e.target)) {
-            navMenu.classList.remove('mobile-active');
-            const icon = mobileMenuBtn.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-    });
 }
