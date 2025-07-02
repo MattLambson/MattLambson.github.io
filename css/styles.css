@@ -1721,9 +1721,10 @@ html {
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
-/* Mobile styles */
-@media (max-width: 768px) {
-    /* Show hamburger menu on mobile */
+/* Mobile styles - Updated to handle landscape mode */
+@media (max-width: 1024px) and (max-height: 768px), 
+       (max-width: 768px) {
+    /* Show hamburger menu on mobile OR landscape orientation */
     .mobile-menu-btn {
         display: flex;
     }
