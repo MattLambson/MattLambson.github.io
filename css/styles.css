@@ -497,9 +497,19 @@ html {
     box-shadow: 0 12px 30px var(--shadow-color); /* Bigger shadow */
 }
 
+.project-description {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 15px;
+    /* Simple max-height approach instead of line-clamp */
+    max-height: 4.5em; /* Approximately 3 lines */
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
 .project-card:hover .project-description {
-    display: block;
-    -webkit-line-clamp: unset;
+    max-height: none; /* Show full content on hover */
 }
 
 .project-image {
