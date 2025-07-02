@@ -1697,3 +1697,74 @@ html {
         font-size: 18px;
     }
 }
+/* Mobile Menu Styles */
+.mobile-menu-toggle {
+    display: none;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.mobile-menu-toggle:hover {
+    background: var(--blue-accent);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+/* Mobile Menu Responsive Behavior */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        box-shadow: 0 8px 25px var(--shadow-color);
+        padding: 20px 0;
+        min-width: 200px;
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .nav-menu.mobile-open {
+        display: flex;
+    }
+    
+    .nav-menu li {
+        padding: 0;
+    }
+    
+    .nav-menu a {
+        display: block;
+        padding: 15px 25px;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .nav-menu a:hover {
+        background: var(--bg-secondary);
+    }
+    
+    .nav-menu li:last-child a {
+        border-bottom: none;
+    }
+    
+    /* Center social icons on mobile */
+    .social-icons {
+        justify-content: center;
+    }
+}
