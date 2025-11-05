@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 icon.classList.add('fa-bars');
             }
         });
-
+        
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!mobileMenuBtn.contains(e.target) && !navMenu.contains(e.target)) {
@@ -140,6 +140,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.style.transition = 'all 0.3s ease';
             }
         }, 100);
+        
+        // Homepage animation sequence trigger
+        if (document.body.classList.contains('home-page')) {
+            initializeHomepageAnimations();
+        }
     });
     
     // Enhanced scroll reveal animation
@@ -220,9 +225,90 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
+    
+    // Calendly button functionality (if exists on contact page)
+    const calendlyButton = document.querySelector('.calendly-button');
+    if (calendlyButton) {
+        calendlyButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Replace with your actual Calendly link
+            window.open('https://calendly.com/matthew-lambson/60min', '_blank');
+        });
+    }
 });
 
-// Helper Functions (outside DOMContentLoaded so they're globally available)
+// ========================================
+// HOMEPAGE ANIMATION SEQUENCE
+// ========================================
+function initializeHomepageAnimations() {
+    // Prevent animation replays
+    let animationsTriggered = false;
+    
+    if (!animationsTriggered) {
+        sessionStorage.setItem('homepage-animations-played', 'true');
+        console.log('Homepage micro-animations initiated');
+        
+        // All animations are CSS-driven via keyframes
+        // This function just logs confirmation and can be extended for JS-driven effects
+        
+        // Optional: Add subtle parallax effect to profile image
+        addProfileParallax();
+    } else {
+        // Skip animations on subsequent page visits (same session)
+        skipAnimations();
+    }
+}
+
+function skipAnimations() {
+    // Instantly show all animated elements without animation
+    const animatedElements = [
+        '.greeting-header',
+        '.hero-subtitle',
+        '.description',
+        '.btn-primary',
+        '.loop-step',
+        '.social-icons',
+        '.section-card'
+    ];
+    
+    animatedElements.forEach(selector => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(el => {
+            el.style.animation = 'none';
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+        });
+    });
+}
+
+function addProfileParallax() {
+    const profileImage = document.querySelector('.profile-image');
+    
+    if (profileImage) {
+        let ticking = false;
+        
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * 0.3;
+                    
+                    if (scrolled < 800) {
+                        profileImage.style.transform = `translateY(${rate}px)`;
+                    }
+                    
+                    ticking = false;
+                });
+                
+                ticking = true;
+            }
+        });
+    }
+}
+
+// ========================================
+// HELPER FUNCTIONS
+// ========================================
 
 // Function to update active navigation based on scroll position
 function updateActiveNavOnScroll() {
@@ -280,18 +366,22 @@ function showNotification(message, type = 'info') {
     notification.className = `notification notification-${type}`;
     notification.textContent = message;
     
+    // Use CSS variables for theming
+    const bgColor = type === 'success' ? 'var(--red-accent)' : 'var(--red-accent)';
+    
     notification.style.cssText = `
         position: fixed;
         top: 20px;
         right: 20px;
         padding: 15px 20px;
-        background: var(--blue-accent);
+        background: ${bgColor};
         color: white;
         border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 15px var(--red-glow);
         z-index: 9999;
         transform: translateX(400px);
         transition: transform 0.3s ease;
+        font-weight: 500;
     `;
     
     document.body.appendChild(notification);
