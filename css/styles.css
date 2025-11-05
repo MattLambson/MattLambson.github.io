@@ -12,7 +12,7 @@
     --bg-secondary: #111111;
     --bg-card: #121212;
     --bg-gradient-start: #0a0a0a;
-    --bg-gradient-end: #111111;
+    --bg-gradient-end: #100505;
     --text-primary: #ffffff;
     --text-secondary: #a8a8a8;
     --border-color: rgba(178, 34, 34, 0.2);
@@ -47,7 +47,7 @@ body {
     background-color: var(--bg-primary);
     background-image: 
         radial-gradient(circle, var(--grid-color) 1px, transparent 1px),
-        linear-gradient(180deg, #0a0a0a 0%, #100505 100%);
+        linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
     background-size: 15px 15px, 100% 100%;
     background-attachment: fixed, fixed;
     color: var(--text-primary);
@@ -2225,9 +2225,15 @@ body:not(.home-page) .section-card {
     }
 }
 
-/* Disable particles on light theme */
-[data-theme="light"] .particle-container {
-    display: none;
+/* Adjust particles for light theme instead of hiding */
+[data-theme="light"] .particle {
+    background: radial-gradient(circle, rgba(139, 26, 26, 0.8), rgba(139, 26, 26, 0.4) 40%, transparent 70%);
+    box-shadow: 0 0 4px rgba(139, 26, 26, 0.3);
+}
+
+/* Reduce opacity slightly on light mode */
+[data-theme="light"] .particle:nth-child(odd) {
+    opacity: 0.7;
 }
 
 /* Disable on mobile for performance */
