@@ -1,94 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matt Lambson | Head of Making it Make Sense</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Matt Lambson | Technical Consultant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="home-page">
-    <!-- Ambient Particle Effect -->
-    <div class="particle-container">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
-    <nav class="top-nav">
-        <div class="nav-container">
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-                <i class="fas fa-moon" id="themeIcon"></i>
-            </button>
-            
-            <!-- Mobile hamburger menu (only shows on mobile) -->
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <!-- Navigation menu -->
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="about.html">Who I Am</a></li>
-                <li><a href="projects.html">What I've Done</a></li>
-                <li><a href="how-i-work.html">How I Work</a></li>
-                <li><a href="contact.html">Let's Talk</a></li>
-            </ul>
+
+<body>
+
+    <!-- Global Navigation -->
+    <nav class="global-nav-pill">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">Who I Am</a>
+            <a href="projects.html">Solutions</a>
+            <a href="how-i-work.html">How I Work</a>
+            <a href="contact.html">Contact</a>
         </div>
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+            <i class="fas fa-bars"></i>
+        </button>
     </nav>
-    
-    <div class="main-content">
-        <div class="hero-section">
-            <div class="profile-container">
-                <img src="assets/images/profile.png" alt="Profile" class="profile-image">
-            </div>
-            <div class="content-container">
-                <h1 class="greeting-header">👋 Hi, I'm Matt</h1>
-                <h2 class="hero-subtitle">I build AI-driven solutions that do real work.</h2>
-                <p class="description">From agentic workflows to kick-ass demos, I turn complexity into clarity.</p>
-                <div class="buttons">
-                    <a href="contact.html" class="loop-step">Let's talk!</a>
+
+    <div class="dashboard-wrapper">
+
+        <!-- COLUMN 1: LEFT (Trace & Stack) -->
+        <div class="col-left">
+
+            <!-- Module 1: The Trace -->
+            <div class="bento-card trace-card">
+                <div class="terminal-header">
+                    <div class="status-dot active"></div>
+                    <span class="cursor-blink">Live AI Agents Trace</span>
                 </div>
-                <div class="social-icons">
-                    <a href="https://github.com/MattLambson" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/mattlambson/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <div class="trace-output" id="traceOutput">
+                    <!-- JS Injected -->
                 </div>
             </div>
+
+            <!-- Module 2: The Stack (Metadata Grid) -->
+            <div class="bento-card stack-card">
+                <div class="card-title">The Technical Stack</div>
+                <div class="stack-grid">
+
+                    <div class="stack-category">
+                        <div class="stack-label">Intelligence Layer</div>
+                        <div class="stack-pills">
+                            <span class="tech-pill">Gemini 3 Pro</span>
+                            <span class="tech-pill">Claude</span>
+                            <span class="tech-pill">GPT-5.2</span>
+                        </div>
+                    </div>
+
+                    <div class="stack-category">
+                        <div class="stack-label">Messaging & Channels</div>
+                        <div class="stack-pills">
+                            <span class="tech-pill">WhatsApp</span>
+                            <span class="tech-pill">RCS</span>
+                            <span class="tech-pill">SMS</span>
+                            <span class="tech-pill">LiveChat (CM.com)</span>
+                        </div>
+                    </div>
+
+                    <div class="stack-category">
+                        <div class="stack-label">Logic & Orchestration</div>
+                        <div class="stack-pills">
+                            <span class="tech-pill">HALO Platform</span>
+                            <span class="tech-pill">JSON</span>
+                            <span class="tech-pill">REST APIs</span>
+                        </div>
+                    </div>
+
+                    <div class="stack-category">
+                        <div class="stack-label">The Toolkit</div>
+                        <div class="stack-pills">
+                            <span class="tech-pill">Postman</span>
+                            <span class="tech-pill">HTML/CSS/JS</span>
+                            <span class="tech-pill">Loom</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
-        
-        <div class="bottom-sections" id="projects">
-            <div class="section-card">
-                <h3>Who I Am</h3>
-                <p>I'm a Sales Engineer and AI architect who works at the intersection of storytelling, systems, and scale. I build demos, tools, and workflows that turn complexity into clarity so teams can move faster and sell smarter. Outside of work, you'll usually find me with my three daughters, exploring new ideas, testing new AI trends, or just building things for the fun of it.</p>
-                <a href="about.html" class="section-link">Find out more about me →</a>
-            </div>
-            <div class="section-card">
-                <h3>What I've Done</h3>
-                <p>From trade show touchscreen interfaces to AI-powered CRM mockups, I build projects that make complex tech feel tangible. These include sales-ready demo environments, real-time chatbot showcases, internal tools for CDP automation, and UI-based platforms that help teams sell smarter and scale faster.</p>
-                <a href="projects.html" class="section-link">Take a look at my projects →</a>
-            </div>
-            <div class="section-card" id="how-i-work">
-                <h3>How I Work</h3>
-                <p>This isn't just how I build with AI. It's how I solve problems, design systems, and move projects forward. From prototyping tools to refining sales workflows, this loop keeps me focused, fast, and flexible.</p>
-                <a href="how-i-work.html" class="section-link">See more about how I work →</a>
-                <div class="workflow-diagram">
-                    <img src="assets/images/howiwork.png" alt="How I work" class="workflow-background">
+
+        <!-- COLUMN 2: CENTER (Hero & Projects) -->
+        <div class="col-center">
+
+            <!-- Module 3: Hero Text (Transparent) -->
+            <div class="hero-container">
+                <div class="hero-title">👋 Hi, I'm <span style="color: var(--accent-blue);">Matt</span></div>
+                <div class="hero-subtitle">Building trust and solving complex CX problems with AI and global messaging.
+                </div>
+                <div class="hero-actions">
+                    <a href="contact.html" class="btn-primary">Let's talk!</a>
+                    <a href="https://github.com/MattLambson" target="_blank" class="social-btn"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mattlambson/" target="_blank" class="social-btn"><i
+                            class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
+
+            <!-- Module 4: Featured Solutions (Thumbnail Rows) -->
+            <div class="bento-card projects-card">
+                <div class="projects-header">
+                    <div class="card-title" style="margin:0;">Featured Solutions</div>
+                </div>
+
+                <div class="projects-grid">
+
+                    <!-- Card 1 -->
+                    <div class="project-card-row">
+                        <div class="project-thumb-small">
+                            <img src="assets/images/projects/industryHeroes.png" alt="Industry Agents"
+                                class="project-img-preview">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title-row">Industry-Specific Agentic Solutions</div>
+                            <span class="project-meta-row"
+                                style="color: var(--text-secondary); font-size: 13px;">Interactive interface showcasing
+                                vertical-specific AI assistants.</span>
+                            <a href="projects.html" class="project-action-link">[Explore_Solution]</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="project-card-row">
+                        <div class="project-thumb-small">
+                            <img src="assets/images/projects/HALOHub.png" alt="HALO Demo Hub"
+                                class="project-img-preview">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title-row">HALO Demo Hub</div>
+                            <span class="project-meta-row" style="color: var(--text-secondary); font-size: 13px;">A
+                                centralized portal for teams to deploy customized HALO demos.</span>
+                            <a href="projects.html" class="project-action-link">[Explore_Solution]</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="margin-top: auto; padding-top: 24px;">
+                    <a href="projects.html" class="btn-primary"
+                        style="display: block; width: 100%; text-align: center; font-size: 13px; padding: 10px; background: rgba(0, 122, 255, 0.1); border: 1px solid var(--accent-blue);">View
+                        Other Projects</a>
+                </div>
+            </div>
+
         </div>
+
+        <!-- COLUMN 3: RIGHT (Profile & Mindset) -->
+        <div class="col-right">
+
+            <!-- Module 5: Profile -->
+            <div class="bento-card profile-card">
+                <img src="assets/images/profile.png" alt="Matt Lambson" class="profile-avatar">
+                <div class="profile-name">Matt Lambson</div>
+                <div class="profile-role">Technical Consultant</div>
+            </div>
+
+            <!-- Module 6: Mindset (Core Directives) -->
+            <div class="bento-card mindset-card">
+                <div class="card-title">Core Directives</div>
+
+                <div class="mindset-console">
+
+                    <div class="directive-item">
+                        <i class="fas fa-shield-alt directive-icon"></i>
+                        <div class="directive-content">
+                            <div class="directive-title">Building Trust</div>
+                            <div class="directive-desc">Reliability is everything. I build confidence by mastering the
+                                details, constraints, and edge cases.</div>
+                        </div>
+                    </div>
+
+                    <div class="directive-item">
+                        <i class="fas fa-comment-alt directive-icon"></i>
+                        <div class="directive-content">
+                            <div class="directive-title">Technical Storytelling</div>
+                            <div class="directive-desc">Making sense of complex systems so everyone in the room actually
+                                understands the value.</div>
+                        </div>
+                    </div>
+
+                    <div class="directive-item">
+                        <i class="fas fa-project-diagram directive-icon"></i>
+                        <div class="directive-content">
+                            <div class="directive-title">Closing the Gap</div>
+                            <div class="directive-desc">Working at the intersection of product, engineering, and the
+                                customer's real problems.</div>
+                        </div>
+                    </div>
+
+                    <div class="directive-item">
+                        <i class="fas fa-bullseye directive-icon"></i>
+                        <div class="directive-content">
+                            <div class="directive-title">Focus on Outcomes</div>
+                            <div class="directive-desc">Demos aren't about features; they're about the "Aha!" moment
+                                where the solution clicks.</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
     </div>
-    
-    <footer class="footer">
-        <p>&copy; 2025 Matt Lambson. Built with HTML/CSS/JS, very late nights and way too much caffeine.</p>
-    </footer>
-    
+
     <script src="js/main.js"></script>
 </body>
+
 </html>
