@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize Trace
-    initTraceAnimation();
+    // initTraceAnimation(); // Removed as function is missing
 
     // Theme Toggle Functionality (Consolidated and Fixed)
     const themeToggle = document.getElementById('themeToggle');
@@ -45,11 +45,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (mobileMenuBtn && navMenu) {
         mobileMenuBtn.addEventListener('click', function () {
-            navMenu.classList.toggle('mobile-active');
+            navMenu.classList.toggle('open');
 
             // Change icon
             const icon = mobileMenuBtn.querySelector('i');
-            if (navMenu.classList.contains('mobile-active')) {
+            if (navMenu.classList.contains('open')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
             } else {
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Close menu when clicking outside
         document.addEventListener('click', function (e) {
             if (!mobileMenuBtn.contains(e.target) && !navMenu.contains(e.target)) {
-                navMenu.classList.remove('mobile-active');
+                navMenu.classList.remove('open');
                 const icon = mobileMenuBtn.querySelector('i');
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');

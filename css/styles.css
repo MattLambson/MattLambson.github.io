@@ -121,6 +121,7 @@
 
     .mobile-nav-toggle {
         display: block;
+        z-index: 1001;
     }
 }
 
@@ -787,8 +788,10 @@ ul {
 .art-possible-card {
     background: var(--bg-card);
     /* Standard Card BG */
-    border: 1px solid rgba(0, 122, 255, 0.3);
-    /* Data Blue border */
+    /* Standard Card BG */
+    border: 1px solid var(--border-subtle) !important;
+    /* Standard border */
+    /* Standard border */
     display: flex;
     flex-direction: column;
     padding: 24px;
@@ -1053,14 +1056,56 @@ ul {
         height: auto;
         flex-wrap: wrap;
         max-height: none;
+        flex-direction: column;
     }
 
     .col-left,
     .col-center,
     .col-right {
-        flex: 100%;
+        display: contents;
+    }
+
+    /* Mobile Reordering */
+    /* 1. Profile */
+    .profile-card {
+        order: 1;
         width: 100%;
-        max-width: none;
+    }
+
+    /* 2. Intro */
+    .hero-container {
+        order: 2;
+        width: 100%;
+    }
+
+    /* 3. Art of the Possible */
+    .art-possible-card {
+        order: 3;
+        width: 100%;
+    }
+
+    /* 4. Core Directives */
+    .mindset-card {
+        order: 4;
+        width: 100%;
+    }
+
+    /* 5. Tech Stack */
+    .stack-card {
+        order: 5;
+        width: 100%;
+    }
+
+    /* 6. Solutions */
+    .projects-card {
+        order: 6;
+        width: 100%;
+    }
+
+    /* 7. Field Notes */
+    .blog-card {
+        order: 7;
+        width: 100%;
     }
 
     .trace-card {
