@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matt Lambson | Technical Consultant</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=36">
 </head>
 
 <body>
@@ -18,6 +18,7 @@
             <a href="about.html">Who I Am</a>
             <a href="projects.html">Solutions</a>
             <a href="how-i-work.html">How I Work</a>
+            <a href="blog.html">Field Notes</a>
             <a href="contact.html">Contact</a>
         </div>
         <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
@@ -30,18 +31,7 @@
         <!-- COLUMN 1: LEFT (Trace & Stack) -->
         <div class="col-left">
 
-            <!-- Module 1: The Trace -->
-            <div class="bento-card trace-card">
-                <div class="terminal-header">
-                    <div class="status-dot active"></div>
-                    <span class="cursor-blink">Live AI Agents Trace</span>
-                </div>
-                <div class="trace-output" id="traceOutput">
-                    <!-- JS Injected -->
-                </div>
-            </div>
-
-            <!-- Module 2: The Stack (Metadata Grid) -->
+            <!-- Module 2: The Stack (Metadata Grid) - NOW TOP -->
             <div class="bento-card stack-card">
                 <div class="card-title">The Technical Stack</div>
                 <div class="stack-grid">
@@ -83,6 +73,19 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+
+            <!-- Module 1: Field Notes (Blog Feed) - NOW BOTTOM -->
+            <div class="bento-card blog-card">
+                <div class="blog-header">FIELD_NOTES</div>
+                <div class="blog-feed">
+                    <div class="blog-empty-state">
+                        <span class="terminal-cursor">></span> NO_LOGS_FOUND_
+                    </div>
+                </div>
+                <div class="blog-footer">
+                    <a href="blog.html" class="btn-blog-view">View All Logs</a>
                 </div>
             </div>
 
@@ -161,6 +164,18 @@
                 <img src="assets/images/profile.png" alt="Matt Lambson" class="profile-avatar">
                 <div class="profile-name">Matt Lambson</div>
                 <div class="profile-role">Technical Consultant</div>
+            </div>
+
+            <!-- Module 5.5: Art of the Possible -->
+            <div class="bento-card art-possible-card">
+                <div class="art-possible-header">THE ART OF THE POSSIBLE</div>
+                <div class="art-possible-content">
+                    <div class="art-icon-wrapper">
+                        <i class="fa-solid fa-angles-up art-icon"></i>
+                    </div>
+                    <p class="art-text">"I don't just demo the feature list, I stretch platform capabilities to show
+                        clients a future they didn't think was possible."</p>
+                </div>
             </div>
 
             <!-- Module 6: Mindset (Core Directives) -->

@@ -276,11 +276,12 @@ ul {
 
 /* Columns (with blowout protection) */
 .col-left {
-    flex: 0 0 400px;
+    flex: 0 0 480px;
     display: flex;
     flex-direction: column;
     gap: 24px;
     min-width: 0;
+    /* align-self removed to allow full height */
 }
 
 .col-center {
@@ -289,10 +290,12 @@ ul {
     flex-direction: column;
     gap: 24px;
     min-width: 0;
+    align-self: flex-end;
+    /* Bottom-align center column */
 }
 
 .col-right {
-    flex: 0 0 320px;
+    flex: 0 0 400px;
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -319,85 +322,12 @@ ul {
 
 /* --- MODULES --- */
 
-/* 1. Trace Terminal (Left Top) */
-.trace-card {
-    flex: 1.5;
-    font-family: var(--font-mono);
-    min-height: 400px;
-}
-
-.terminal-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border-subtle);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--text-dim);
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--text-dim);
-}
-
-.status-dot.active {
-    background: var(--accent-blue);
-    box-shadow: 0 0 8px var(--accent-blue);
-}
-
-/* Blinking Cursor */
-.cursor-blink::after {
-    content: '_';
-    animation: blink 1s step-end infinite;
-    color: var(--accent-blue);
-    font-weight: 700;
-}
-
-@keyframes blink {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-}
-
-.trace-output {
-    flex-grow: 1;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    font-size: 13px;
-    color: var(--text-secondary);
-}
-
-.trace-line {
-    opacity: 0;
-    line-height: 1.5;
-}
-
-.trace-line.visible {
-    opacity: 1;
-}
-
-.highlight {
-    color: var(--accent-blue);
-    font-weight: 700;
-}
-
-/* 2. Stack Metadata Grid (Left Bottom) */
+/* 1. Stack Metadata Grid (NOW Left Top) */
+/* 1. Stack Metadata Grid (NOW Left Top) */
 .stack-card {
-    flex: 1;
+    flex: 0 0 auto;
+    /* Allow it to size to content */
+    background: var(--bg-card);
 }
 
 .card-title {
@@ -443,6 +373,95 @@ ul {
     padding: 4px 8px;
     white-space: nowrap;
 }
+
+/* 2. Blog Feed Card (Left Bottom) */
+.blog-card {
+    flex: 1;
+    /* Fill remaining space */
+    background: var(--bg-card);
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 16px;
+    min-height: 250px;
+}
+
+.blog-header {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 12px;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.blog-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-grow: 1;
+}
+
+.blog-empty-state {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.terminal-cursor {
+    color: var(--accent-blue);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.blog-footer {
+    margin-top: auto;
+    padding-top: 12px;
+}
+
+.btn-blog-view {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-blog-view:hover {
+    color: var(--accent-blue);
+    transform: translateX(2px);
+}
+
+.btn-blog-view::after {
+    content: "→";
+    font-family: var(--font-sans);
+}
+
+
 
 /* 3. Hero Text (Center Top) */
 .hero-container {
@@ -764,9 +783,68 @@ ul {
     text-transform: uppercase;
 }
 
+/* 5.5 Art of the Possible */
+.art-possible-card {
+    background: var(--bg-card);
+    /* Standard Card BG */
+    border: 1px solid rgba(0, 122, 255, 0.3);
+    /* Data Blue border */
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 16px;
+    justify-content: center;
+}
+
+.art-possible-header {
+    font-family: var(--font-mono);
+    /* JetBrains Mono */
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    /* Grey */
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+.art-possible-content {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.art-icon-wrapper {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 122, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 122, 255, 0.2);
+}
+
+.art-icon {
+    color: var(--accent-blue);
+    /* Data Blue */
+    font-size: 16px;
+}
+
+.art-text {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #FFFFFF;
+    /* White Text */
+    margin: 0;
+}
+
 /* 6. Mindset (Console) */
 .mindset-card {
     flex: 1;
+    margin-top: auto;
+    /* Push to bottom while keeping profile at top */
 }
 
 .mindset-console {

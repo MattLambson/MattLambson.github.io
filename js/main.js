@@ -178,77 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // ========================================
 // TRACE ANIMATION (UPDATED)
 // ========================================
-function initTraceAnimation() {
-    const traceOutput = document.getElementById('traceOutput');
-    if (!traceOutput) return;
-
-    // Updated Trace Sequence
-    const traceLines = [
-        { text: "Request: Deploy multi-agent communication system for [Prospect_Name]", delay: 500 },
-        { text: "Initializing Agentic AI... model: <span class='highlight'>Model Selected</span>", delay: 800 },
-        { text: "Injecting HALO Platform (CM.com) orchestration logic", delay: 1200 },
-        { text: "Validating messaging routes (WhatsApp/LiveChat)... <span class='highlight'>Success</span>", delay: 1600 },
-        { text: "Connecting CM.com CDP & external data platforms... <span class='highlight'>Active</span>", delay: 2000 },
-        { text: "Deployment Complete: Solution Environment <span class='highlight'>Live!</span>", delay: 2400 }
-    ];
-
-    let currentLineIndex = 0;
-    let traceTimeout;
-
-    function startTrace() {
-        // Clear existing content and reset index
-        traceOutput.innerHTML = '';
-        currentLineIndex = 0;
-        typeLine();
-    }
-
-    function typeLine() {
-        if (currentLineIndex >= traceLines.length) {
-            // Animation complete, schedule reset
-            setTimeout(startTrace, 120000); // Reset after 2 minutes (120,000 ms)
-            return;
-        }
-
-        const lineData = traceLines[currentLineIndex];
-        const lineEl = document.createElement('div');
-        lineEl.className = 'trace-line';
-        const plainText = lineEl.textContent;
-        lineEl.innerHTML = '';
-        lineEl.classList.add('visible');
-
-        traceOutput.appendChild(lineEl);
-
-        // Simple typing effect or just show full line? 
-        // Let's do the typing effect from before
-        let charIndex = 0;
-        // Strip HTML tags for typing
-        const textToType = lineData.text.replace(/<[^>]*>/g, '');
-
-        const typeChar = () => {
-            // For simplicity in this overwritten version, we might just set the text content
-            // to ensure reliability, but let's try to simulate typing:
-            if (charIndex < textToType.length) {
-                lineEl.textContent += textToType.charAt(charIndex);
-                charIndex++;
-                setTimeout(typeChar, 20);
-            } else {
-                // Restore HTML
-                if (lineData.text.includes('<span')) {
-                    lineEl.innerHTML = lineData.text;
-                }
-
-                traceOutput.scrollTop = traceOutput.scrollHeight;
-                currentLineIndex++;
-                traceTimeout = setTimeout(typeLine, lineData.delay || 500);
-            }
-        };
-
-        typeChar();
-    }
-
-    // Start the initial trace
-    setTimeout(startTrace, 1000);
-}
+// Trace animation removed (Replaced by Collaboration Hub)
 
 // ========================================
 // HELPER FUNCTIONS
