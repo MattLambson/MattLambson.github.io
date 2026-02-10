@@ -25,6 +25,32 @@
     --font-mono: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
 }
 
+
+/* Mobile Layout Adjustments */
+@media (max-width: 480px) {
+    .project-card-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+    }
+
+    .project-thumb-small {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 160px !important;
+    }
+
+    .project-img-preview {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    .project-title-row {
+        white-space: normal !important;
+    }
+}
+
 /* Global Navigation Pill */
 .global-nav-pill {
     position: fixed;
@@ -123,7 +149,16 @@
         display: block;
         z-index: 1001;
     }
+
+    body {
+        padding: 80px 20px 40px 20px;
+    }
+
+    .bento-card {
+        padding: 24px 20px;
+    }
 }
+
 
 /* Base Reset */
 * {
