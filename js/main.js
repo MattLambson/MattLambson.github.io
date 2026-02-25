@@ -173,6 +173,18 @@ document.addEventListener('DOMContentLoaded', function () {
             this.style.transform = 'translateY(-5px) scale(1)';
         });
     });
+
+    // Limit index field notes feed to 10 entries
+    const indexBlogFeed = document.getElementById('indexBlogFeed');
+    if (indexBlogFeed) {
+        const feedLinks = indexBlogFeed.querySelectorAll('a.blog-entry-link');
+        if (feedLinks.length > 10) {
+            // Hide entries after the 10th one
+            for (let i = 10; i < feedLinks.length; i++) {
+                feedLinks[i].style.display = 'none';
+            }
+        }
+    }
 });
 
 // ========================================
