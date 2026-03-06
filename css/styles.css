@@ -1341,6 +1341,19 @@ ul {
     /* remove glow */
 }
 
+/* Inline Links */
+.inline-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.inline-link:hover {
+    text-decoration: underline;
+    color: var(--text-primary);
+}
+
 /* Blog Entry Links (Home Page Feed) */
 .blog-entry-link {
     font-family: var(--font-mono);

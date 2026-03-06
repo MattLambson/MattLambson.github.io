@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,46 +8,45 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    <nav class="top-nav">
-        <div class="nav-container">
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-                <i class="fas fa-moon" id="themeIcon"></i>
-            </button>
-            
-            <!-- Mobile hamburger menu (only shows on mobile) -->
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <!-- Navigation menu -->
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">Who I Am</a></li>
-                <li><a href="how-i-work.html">How I Work</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+    <!-- Global Navigation -->
+    <nav class="global-nav-pill" id="navMenu">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">Who I Am</a>
+            <a href="projects.html">Solutions</a>
+            <a href="how-i-work.html">How I Work</a>
+            <a href="blog.html">Field Notes</a>
+            <a href="contact.html">Contact</a>
         </div>
+        <button class="mobile-nav-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+            <i class="fas fa-bars"></i>
+        </button>
     </nav>
-    
+
     <div class="main-content">
         <div class="page-header">
             <h1 class="page-title">CM.com Customer Data Platform Profile Updater</h1>
             <p class="page-subtitle">A streamlined CSV processor for batch customer profile management</p>
         </div>
-        
+
         <div class="content-container">
             <div class="project-detail">
                 <div class="project-detail-image-container">
-                    <img src="assets/images/projects/cdpCSVProcessor.png" alt="CDP Profile Updater Screenshot" class="project-detail-image">
+                    <img src="assets/images/projects/cdpCSVProcessor.png" alt="CDP Profile Updater Screenshot"
+                        class="project-detail-image">
                 </div>
-                
+
                 <div class="project-description-container">
                     <div class="project-section">
                         <h2>Project Purpose</h2>
-                        <p>The CM.com Customer Data Platform (CDP) Profile Updater application was designed as a demo and testing tool to be able to quickly upload a customer's CSV file to their Customer Data Platform environment. This application utilizes the corresponding CM.com API calls and is meant to simulate the customer making these API calls directly.</p>
+                        <p>The CM.com Customer Data Platform (CDP) Profile Updater application was designed as a demo
+                            and testing tool to be able to quickly upload a customer's CSV file to their Customer Data
+                            Platform environment. This application utilizes the corresponding CM.com API calls and is
+                            meant to simulate the customer making these API calls directly.</p>
                     </div>
-                    
+
                     <div class="project-section">
                         <h3>Key Features</h3>
                         <ul class="feature-list">
@@ -56,10 +56,11 @@
                             <li>Progress indicators and status updates during processing</li>
                         </ul>
                     </div>
-                    
+
                     <div class="project-section">
                         <h3>Business Benefits</h3>
-                        <p>This application serves as a quick and easy way to demonstrate CM.com's CDP API for uploading and updating User Profiles. It provides several key advantages:</p>
+                        <p>This application serves as a quick and easy way to demonstrate CM.com's CDP API for uploading
+                            and updating User Profiles. It provides several key advantages:</p>
                         <ul class="feature-list">
                             <li>Streamlined demonstration of CDP capabilities during sales presentations</li>
                             <li>Simplified bulk data management for testing and demo scenarios</li>
@@ -67,10 +68,13 @@
                             <li>Real-time feedback on data processing operations</li>
                         </ul>
                     </div>
-                    
+
                     <div class="project-section project-tech">
                         <h3>Technologies Used</h3>
-                        <p>The CDP Profile Updater was developed with a focus on usability for non-technical users while maintaining robust data handling capabilities. The application interfaces directly with CM.com's CDP API, providing a more streamlined experience compared to the standard web interface.</p>
+                        <p>The CDP Profile Updater was developed with a focus on usability for non-technical users while
+                            maintaining robust data handling capabilities. The application interfaces directly with
+                            CM.com's CDP API, providing a more streamlined experience compared to the standard web
+                            interface.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">Tkinter</span>
@@ -80,7 +84,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-navigation">
                     <a href="projects.html" class="back-link">
                         <i class="fas fa-arrow-left"></i> Back to Projects
@@ -89,11 +93,12 @@
             </div>
         </div>
     </div>
-    
+
     <footer class="footer">
         <p>&copy; 2025 Matt Lambson. Built with HTML/CSS/JS, very late nights and way too much caffeine.</p>
     </footer>
-    
+
     <script src="js/main.js"></script>
 </body>
+
 </html>
