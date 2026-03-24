@@ -1,7 +1,5 @@
 "use client";
 
-import TerminalCard from "./TerminalCard";
-
 const directives = [
   {
     icon: <svg className="w-7 h-7 text-[#3b82f6]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>,
@@ -31,12 +29,12 @@ const directives = [
 
 export default function CoreDirectives() {
   return (
-    <TerminalCard filename="core_directives.sh">
+    <div className="w-full">
       <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-12">
         Core Directives
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-x-24 lg:gap-y-20">
+      <div className="flex flex-col gap-12">
         {directives.map((d) => (
           <div key={d.title} className="flex items-start gap-6">
             <span className="mt-1 shrink-0">{d.icon}</span>
@@ -51,6 +49,6 @@ export default function CoreDirectives() {
           </div>
         ))}
       </div>
-    </TerminalCard>
+    </div>
   );
 }

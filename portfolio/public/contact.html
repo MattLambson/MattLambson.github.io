@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt Lambson | Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css?v=5">
+    <!-- Add Calendly stylesheet -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Global Navigation -->
+    <nav class="global-nav-pill" id="navMenu">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">Who I Am</a>
+            <a href="projects.html">Solutions</a>
+            <a href="how-i-work.html">How I Work</a>
+            <a href="blog.html">Field Notes</a>
+            <a href="contact.html" class="active">Contact</a>
+        </div>
+        <button class="mobile-nav-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <div class="main-content">
+        <div class="page-header">
+            <h1 class="page-title">Let's Connect</h1>
+            <p class="page-subtitle">Ready to explore how AI can transform your workflows? Let's chat about what's
+                possible.</p>
+        </div>
+
+        <div class="content-container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-methods">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-details">
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:matthew.lambson@gmail.com">matthew.lambson@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <div class="contact-details">
+                                <span class="contact-label">LinkedIn</span>
+                                <a href="https://www.linkedin.com/in/mattlambson/" target="_blank">Connect with me
+                                    professionally</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <div class="contact-details">
+                                <span class="contact-label">GitHub</span>
+                                <a href="https://github.com/MattLambson" target="_blank">Check out my code</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item calendly-item">
+                            <i class="far fa-calendar-alt"></i>
+                            <div class="contact-details">
+                                <span class="contact-label">Schedule a Meeting</span>
+                                <button class="calendly-button" onclick="openCalendly()">
+                                    Book a time that works for you
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-cta">
+                    <h3>What We Could Discuss</h3>
+                    <ul class="discussion-topics">
+                        <li>AI workflow automation and agentic systems</li>
+                        <li>Custom demo development and sales enablement tools</li>
+                        <li>Technical consulting and solution architecture</li>
+                        <li>Collaboration opportunities and project partnerships</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Matt Lambson. Built with HTML/CSS/JS, very late nights and way too much caffeine.</p>
+    </footer>
+
+    <!-- Calendly scripts -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script>
+        function openCalendly() {
+            Calendly.initPopupWidget({
+                url: 'https://calendly.com/matthew-lambson/60min',
+                // Optional settings:
+                prefill: {
+                    // email: "visitor@example.com",  // Pre-fill visitor's email if known
+                    // firstName: "Visitor",          // Pre-fill visitor's name if known
+                },
+                customColors: {
+                    primary: "#3b82f6",              // Match your site's blue accent
+                },
+                hideEventTypeDetails: false,          // Show/hide event details
+                hideGdprBanner: true,                // Hide GDPR banner if not needed
+                hideLanding: false,                  // Show landing page
+            });
+        }
+    </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome | Matt</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .welcome-wrap {
+      min-height: calc(100vh - 65px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 8vh 20px 40px;
+    }
+
+    .welcome-container {
+      width: min(1024px, 100%);
+      text-align: center;
+    }
+
+    .welcome-headline {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+    }
+
+    .welcome-subhead {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--text-secondary);
+      margin: 0 auto 36px;
+      max-width: 780px;
+      line-height: 1.5;
+    }
+
+    .choice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .choice-card {
+      display: block;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 32px;
+      text-decoration: none;
+      color: var(--text-primary);
+      box-shadow: none;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .choice-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-active);
+      box-shadow: var(--glow-active);
+    }
+
+    .choice-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .choice-desc {
+      color: var(--text-secondary);
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .choice-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .top-nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      background: rgba(13, 13, 13, 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 122, 255, 0.5);
+      border-radius: 50px;
+      padding: 12px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: 0 0 10px rgba(0, 122, 255, 0.2);
+    }
+
+    .welcome-gif {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border-subtle);
+      margin: 0 auto 24px auto;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="top-nav">
+    Matt Lambson | Head of Making It Make Sense
+  </header>
+  <main class="welcome-wrap">
+    <div class="welcome-container">
+      <img
+        src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjlneDljNm5neDc3NHFsZWx3MThyajVvbWNoeGpmejVlcTRoOGcwOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/m2Q7FEc0bEr4I/giphy.gif"
+        alt="Welcome GIF" class="welcome-gif">
+      <h1 class="welcome-headline">Nice — QR worked! 😎</h1>
+      <p class="welcome-subhead">Go to my personal site, or visit CM.com to learn how the platform drives CX automation.
+      </p>
+      <section class="choice-grid">
+        <a class="choice-card"
+          href="https://mattlambson.github.io/?utm_source=business_card&utm_medium=qr&utm_campaign=welcome_split">
+          <div class="choice-title">🧰 My Site &amp; Projects</div>
+          <p class="choice-desc">See what I build: demos, tools, and experiments.</p>
+        </a>
+        <a class="choice-card"
+          href="https://www.cm.com/en-us/?utm_source=business_card&utm_medium=qr&utm_campaign=welcome_split">
+          <div class="choice-title">🏢 Learn about CM.com</div>
+          <p class="choice-desc">Explore the platform powering customer engagement and automation.</p>
+        </a>
+      </section>
+    </div>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

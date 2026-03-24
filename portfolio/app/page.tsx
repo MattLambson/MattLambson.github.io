@@ -27,14 +27,14 @@ export default function Home() {
       </div>
 
       {/* Content Sections */}
-      <div className="relative w-full py-28 px-6 md:px-12 lg:px-16 flex justify-center">
-        <div className="w-full max-w-6xl flex flex-col gap-12">
+      <div className="relative w-full py-24 px-6 md:px-12 flex justify-center">
+        <div className="w-full max-w-[1000px] flex flex-col gap-20">
 
-          {/* Core Directives */}
-          <CoreDirectives />
-          
-          {/* Tech Stack */}
-          <TechStack />
+          {/* Core Directives & Tech Stack - Horizontal Split on Desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 w-full border-b border-white/5 pb-16">
+            <CoreDirectives />
+            <TechStack />
+          </div>
 
           {/* Featured Solutions */}
           <FeaturedSolutions />

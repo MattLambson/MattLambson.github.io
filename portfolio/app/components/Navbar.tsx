@@ -44,24 +44,37 @@ export default function Navbar() {
     >
       {/* Desktop pill */}
       <div
-        className="hidden md:flex items-center gap-6 px-16 py-5 rounded-full w-max mx-auto"
+        className="hidden md:flex items-center gap-10 px-12 py-7 rounded-full w-max mx-auto"
         style={{
-          background: "rgba(18, 18, 18, 0.75)",
-          backdropFilter: "blur(24px)",
-          WebkitBackdropFilter: "blur(24px)",
-          border: "1px solid rgba(0, 122, 255, 0.25)",
-          boxShadow: "0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.03)",
+          background: "rgba(13, 13, 13, 0.8)",
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
+          border: "1px solid rgba(0, 122, 255, 0.3)",
         }}
       >
-        {navLinks.map((link) => (
-          <a
-            key={link.label}
-            href={link.href}
-            className="px-6 py-4 text-[16px] tracking-[0.15em] text-white/45 hover:text-white/90 rounded-full transition-all duration-200 font-medium whitespace-nowrap"
-          >
-            {link.label}
-          </a>
-        ))}
+        {navLinks.map((link) => {
+          const isActive = link.href === "/";
+          return (
+            <a
+              key={link.label}
+              href={link.href}
+              className={`relative py-1 text-[13px] font-mono tracking-widest uppercase transition-all duration-200 ${
+                isActive
+                  ? "text-[#007AFF]"
+                  : "text-[#A0A0A0] hover:text-[#007AFF]"
+              }`}
+              style={isActive ? { textShadow: "0 0 8px rgba(0, 122, 255, 0.5)" } : {}}
+            >
+              {link.label}
+              {isActive && (
+                <span 
+                  className="absolute bottom-0 left-0 w-full h-[2px] bg-[#007AFF]"
+                  style={{ boxShadow: "0 0 5px #007AFF" }}
+                />
+              )}
+            </a>
+          );
+        })}
       </div>
 
       {/* Mobile hamburger */}
