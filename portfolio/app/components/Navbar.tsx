@@ -44,7 +44,7 @@ export default function Navbar() {
     >
       {/* Desktop pill */}
       <div
-        className="hidden md:flex items-center gap-10 px-12 py-7 rounded-full w-max mx-auto"
+        className="hidden md:flex items-center gap-[32px] px-[32px] py-[12px] rounded-[50px] w-max mx-auto"
         style={{
           background: "rgba(13, 13, 13, 0.8)",
           backdropFilter: "blur(10px)",
@@ -58,12 +58,15 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className={`relative py-1 text-[13px] font-mono tracking-widest uppercase transition-all duration-200 ${
+              className={`relative py-[4px] text-[13px] font-mono uppercase transition-all duration-200 font-medium ${
                 isActive
                   ? "text-[#007AFF]"
                   : "text-[#A0A0A0] hover:text-[#007AFF]"
               }`}
-              style={isActive ? { textShadow: "0 0 8px rgba(0, 122, 255, 0.5)" } : {}}
+              style={{
+                letterSpacing: "0.5px",
+                ...(isActive ? { textShadow: "0 0 8px rgba(0, 122, 255, 0.5)" } : {})
+              }}
             >
               {link.label}
               {isActive && (
