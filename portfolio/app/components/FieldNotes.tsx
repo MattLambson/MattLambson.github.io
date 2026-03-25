@@ -3,11 +3,11 @@
 const entries = [
   {
     href: "/field-notes/2026/02/001-coming-soon.html",
-    title: "Coming Soon",
+    title: "001 - Coming Soon.blog",
   },
   {
     href: "/field-notes/2026/02/000-introduction.html",
-    title: "Introduction",
+    title: "000 - Introduction.blog",
   },
 ];
 
