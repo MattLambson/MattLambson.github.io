@@ -30,9 +30,12 @@ const directives = [
 export default function CoreDirectives() {
   return (
     <div className="w-full">
-      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-12">
-        Core Directives
-      </h2>
+      <div className="flex items-center gap-3 mb-10">
+        <div className="w-1 h-6 bg-[#FB5A2A] rounded-full" />
+        <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight">
+          Core Directives
+        </h2>
+      </div>
 
       <div className="flex flex-col gap-12">
         {directives.map((d) => (

@@ -2,20 +2,22 @@
 
 import { useState, useEffect } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { label: "HOME", href: "/" },
-  { label: "WHO I AM", href: "/about.html" },
-  { label: "SOLUTIONS", href: "/projects.html" },
-  { label: "HOW I WORK", href: "/how-i-work.html" },
-  { label: "FIELD NOTES", href: "/blog.html" },
-  { label: "CONTACT", href: "/contact.html" },
+  { label: "Home", href: "/" },
+  { label: "Who I Am", href: "/about" },
+  { label: "Solutions", href: "/projects" },
+  { label: "How I Work", href: "/how-i-work" },
+  { label: "Field Notes", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const { scrollY } = useScroll();
+  const pathname = usePathname();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
@@ -35,53 +37,45 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  if (pathname === "/welcome") return null;
+
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: isVisible ? 0 : -100 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-50"
+      className="fixed top-6 left-0 w-full z-50 flex justify-center pointer-events-none"
     >
       {/* Desktop pill */}
       <div
-        className="hidden md:flex items-center gap-[32px] px-[32px] py-[12px] rounded-[50px] w-max mx-auto"
+        className="hidden md:flex items-center gap-12 p-3.5 rounded-full w-max pointer-events-auto"
         style={{
-          background: "rgba(13, 13, 13, 0.8)",
-          backdropFilter: "blur(10px)",
-          WebkitBackdropFilter: "blur(10px)",
-          border: "1px solid rgba(0, 122, 255, 0.3)",
+          background: "rgba(20, 20, 25, 0.6)",
+          backdropFilter: "blur(24px)",
+          WebkitBackdropFilter: "blur(24px)",
+          border: "1px solid rgba(255, 255, 255, 0.15)",
         }}
       >
         {navLinks.map((link) => {
-          const isActive = link.href === "/";
+          const isActive = link.href === "/" ? pathname === "/" : pathname?.startsWith(link.href);
           return (
             <a
               key={link.label}
               href={link.href}
-              className={`relative py-[4px] text-[13px] font-mono uppercase transition-all duration-200 font-medium ${
+              className={`relative px-8 py-3.5 text-lg tracking-wide font-medium rounded-full transition-all duration-300 ${
                 isActive
-                  ? "text-[#007AFF]"
-                  : "text-[#A0A0A0] hover:text-[#007AFF]"
+                  ? "text-white bg-white/10 border border-white/20 shadow-sm"
+                  : "text-white/60 hover:text-white border border-transparent"
               }`}
-              style={{
-                letterSpacing: "0.5px",
-                ...(isActive ? { textShadow: "0 0 8px rgba(0, 122, 255, 0.5)" } : {})
-              }}
             >
               {link.label}
-              {isActive && (
-                <span 
-                  className="absolute bottom-0 left-0 w-full h-[2px] bg-[#007AFF]"
-                  style={{ boxShadow: "0 0 5px #007AFF" }}
-                />
-              )}
             </a>
           );
         })}
       </div>
 
-      {/* Mobile hamburger */}
-      <div className="md:hidden">
+      {/* Mobile Menu Overlay */}
+      <div className="md:hidden relative pointer-events-auto">
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
           className="flex items-center justify-center w-12 h-12 rounded-full"
@@ -114,28 +108,30 @@ export default function Navbar() {
         </button>
 
         {isMobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="absolute top-16 right-0 w-64 py-3 rounded-2xl flex flex-col gap-1 overflow-hidden"
-            style={{
-              background: "rgba(18, 18, 18, 0.92)",
-              backdropFilter: "blur(24px)",
-              WebkitBackdropFilter: "blur(24px)",
-              border: "1px solid rgba(0, 122, 255, 0.2)",
-              boxShadow: "0 8px 32px rgba(0, 0, 0, 0.5)",
-            }}
-          >
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="block px-6 py-4 text-center text-[14px] tracking-[0.15em] text-white/50 hover:text-white hover:bg-white/5 transition-all duration-200 font-medium"
-              >
-                {link.label}
-              </a>
-            ))}
-          </motion.div>
+          <div className="absolute top-14 left-1/2 -translate-x-1/2 pt-4 w-max">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="w-64 py-3 rounded-2xl flex flex-col gap-1 overflow-hidden"
+              style={{
+                background: "rgba(18, 18, 18, 0.92)",
+                backdropFilter: "blur(24px)",
+                WebkitBackdropFilter: "blur(24px)",
+                border: "1px solid rgba(0, 122, 255, 0.2)",
+                boxShadow: "0 8px 32px rgba(0, 0, 0, 0.5)",
+              }}
+            >
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="block px-6 py-4 text-center text-[14px] tracking-[0.15em] text-white/50 hover:text-white hover:bg-white/5 transition-all duration-200 font-medium"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </motion.div>
+          </div>
         )}
       </div>
     </motion.nav>

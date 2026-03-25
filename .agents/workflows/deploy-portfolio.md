@@ -15,9 +15,11 @@ The repository is configured with `.github/workflows/deploy.yml`. When code is p
 If automation fails and you need to deploy the portfolio manually to the root, run the following steps to build the static export and copy the files to the root of the repository:
 
 ```bash
-// turbo
 cd /Users/mattlambson/Documents/GitHub/MattLambson.github.io/portfolio
 npm run build
 cp -R out/* ../
 ```
-After copying, you can commit and push the updated root files.
+After copying, you **MUST** ask the user for explicit permission before attempting to run `git commit` or `git push`. 
+
+> [!WARNING]
+> DO NOT auto-run `git push` or `git commit` under any circumstances. Always await user permission.
