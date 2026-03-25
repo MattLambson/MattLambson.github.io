@@ -14,9 +14,9 @@ const entries = [
 export default function FieldNotes() {
   return (
     <div className="w-full">
-      <div className="flex items-center gap-3 mb-10">
-        <div className="w-1 h-6 bg-[#FB5A2A] rounded-full" />
-        <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight">
+      <div className="flex items-center gap-3 md:gap-4 mb-12">
+        <div className="w-1 h-8 md:h-10 bg-[#FB5A2A] rounded-full" />
+        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
           Field Notes
         </h2>
       </div>

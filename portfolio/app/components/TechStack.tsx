@@ -21,10 +21,10 @@ const stackCategories = [
 
 export default function TechStack() {
   return (
-    <div className="flex flex-col mb-8">
-      <div className="flex items-center gap-3 mb-2">
-        <div className="w-1 h-6 bg-[#FB5A2A] rounded-full" />
-        <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight">
+    <div className="flex flex-col mb-10">
+      <div className="flex items-center gap-3 md:gap-4 mb-4">
+        <div className="w-1 h-8 md:h-10 bg-[#FB5A2A] rounded-full" />
+        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
           The Technical Stack
         </h2>
       </div>
