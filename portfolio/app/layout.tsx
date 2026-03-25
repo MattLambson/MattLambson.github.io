@@ -15,9 +15,6 @@ export const metadata: Metadata = {
   title: "Matt Lambson | Technical Consultant",
   description:
     "Head of Making it Make Sense.",
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
