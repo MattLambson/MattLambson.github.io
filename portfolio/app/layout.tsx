@@ -12,9 +12,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mattlambson.github.io"),
   title: "Matt Lambson | Technical Consultant",
-  description:
-    "Head of Making it Make Sense.",
+  description: "Head of Making it Make Sense.",
 };
 
 export default function RootLayout({
