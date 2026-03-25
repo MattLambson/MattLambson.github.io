@@ -15,6 +15,19 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://mattlambson.github.io"),
   title: "Matt Lambson | Technical Consultant",
   description: "Head of Making it Make Sense.",
+  openGraph: {
+    title: "Matt Lambson | Technical Consultant",
+    description: "Head of Making it Make Sense.",
+    url: "https://mattlambson.github.io",
+    siteName: "Matt Lambson | Technical Consultant",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Matt Lambson | Technical Consultant",
+    description: "Head of Making it Make Sense.",
+  },
 };
 
 export default function RootLayout({
