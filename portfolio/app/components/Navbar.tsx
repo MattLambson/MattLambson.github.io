@@ -37,6 +37,17 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    if (!isMobileOpen) return;
+
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsMobileOpen(false);
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [isMobileOpen]);
+
   if (pathname === "/welcome") return null;
 
   return (
@@ -62,7 +73,7 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className={`relative px-8 py-3.5 text-lg tracking-wide font-medium rounded-full transition-all duration-300 ${
+              className={`no-underline relative px-8 py-3.5 text-lg tracking-wide font-medium rounded-full transition-all duration-300 ${
                 isActive
                   ? "text-white bg-white/10 border border-white/20 shadow-sm"
                   : "text-white/60 hover:text-white border border-transparent"
@@ -78,7 +89,7 @@ export default function Navbar() {
       <div className="md:hidden relative pointer-events-auto">
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className="flex items-center justify-center w-12 h-12 rounded-full"
+          className="flex items-center justify-center w-14 h-14 rounded-full"
           style={{
             background: "rgba(18, 18, 18, 0.75)",
             backdropFilter: "blur(24px)",
@@ -86,7 +97,9 @@ export default function Navbar() {
             border: "1px solid rgba(0, 122, 255, 0.25)",
             boxShadow: "0 8px 32px rgba(0, 0, 0, 0.5)",
           }}
-          aria-label="Toggle Navigation"
+          aria-label={isMobileOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isMobileOpen}
+          aria-controls="mobile-menu"
         >
           <div className="flex flex-col gap-[5px]">
             <span
@@ -110,6 +123,10 @@ export default function Navbar() {
         {isMobileOpen && (
           <div className="absolute top-14 left-1/2 -translate-x-1/2 pt-4 w-max">
             <motion.div
+              id="mobile-menu"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Mobile navigation menu"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               className="w-64 py-3 rounded-2xl flex flex-col gap-1 overflow-hidden"
@@ -125,7 +142,7 @@ export default function Navbar() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="block px-6 py-4 text-center text-[14px] tracking-[0.15em] text-white/50 hover:text-white hover:bg-white/5 transition-all duration-200 font-medium"
+                  className="no-underline block px-6 py-4 text-center text-[14px] tracking-[0.15em] text-white/50 hover:text-white hover:bg-white/5 transition-all duration-200 font-medium"
                 >
                   {link.label}
                 </a>

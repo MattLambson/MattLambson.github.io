@@ -45,7 +45,7 @@ export default function CoreDirectives() {
               <div className="text-lg md:text-xl font-bold text-white/95 mb-2">
                 {d.title}
               </div>
-              <div className="text-base text-white/50 leading-relaxed font-light">
+              <div className="text-base text-white/70 leading-relaxed font-light">
                 {d.description}
               </div>
             </div>

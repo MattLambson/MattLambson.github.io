@@ -13,7 +13,7 @@ export default function Footer() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-10%" }}
-      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] }}
+      transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] }}
       className="pb-12 pt-16 w-full"
     >
       <div className="w-full flex flex-col items-center justify-center text-center">
@@ -23,7 +23,7 @@ export default function Footer() {
           <h2 className="text-5xl md:text-6xl lg:text-[72px] font-bold text-white tracking-tight leading-[1.1] mb-8">
             Let's Build Something<br />That Works.
           </h2>
-          <p className="text-lg md:text-xl text-white/40 mb-12 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-white/70 mb-12 max-w-2xl mx-auto">
             If you're building in AI, SaaS, or creative tech, let's collaborate.
             From MVPs to full-scale products.
           </p>
@@ -45,7 +45,7 @@ export default function Footer() {
             href="https://www.linkedin.com/in/mattlambson/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-white/30 hover:text-white transition-colors"
+            className="text-sm font-medium text-white/60 hover:text-white transition-colors"
           >
             LinkedIn
           </a>
@@ -53,14 +53,14 @@ export default function Footer() {
             href="https://github.com/MattLambson"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-white/30 hover:text-white transition-colors"
+            className="text-sm font-medium text-white/60 hover:text-white transition-colors"
           >
             GitHub
           </a>
         </div>
 
         {/* Copyright */}
-        <div className="text-xs text-white/10 font-light mt-4">
+        <div className="text-xs text-white/50 font-light mt-4">
           © 2026 Matt Lambson. Built with Next.js, Framer Motion, very late nights and way too much caffeine.
         </div>
       </div>

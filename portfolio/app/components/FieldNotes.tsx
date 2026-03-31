@@ -22,30 +22,36 @@ export default function FieldNotes() {
       </div>
 
       <div className="flex flex-col gap-2">
-        {entries.map((entry) => (
+        {entries.length === 0 ? (
+          <div className="text-center py-12 text-white/60">
+            <p>No field notes yet. Check back soon!</p>
+          </div>
+        ) : (
+          entries.map((entry) => (
           <a
             key={entry.title}
             href={entry.href}
-            className="flex items-center justify-between py-3 border-b border-white/5 group last:border-0"
+            className="no-underline flex items-center justify-between py-3 border-b border-white/5 group last:border-0"
           >
             <div className="flex items-center gap-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-white/30 group-hover:bg-blue-400 transition-colors" />
-              <span className="text-lg font-medium text-white/80 group-hover:text-blue-400 transition-colors">
+              <span className="w-1.5 h-1.5 rounded-full bg-white/60 group-hover:bg-blue-400 transition-colors" />
+              <span className="text-lg font-medium text-white/90 group-hover:text-blue-400 transition-colors">
                 {entry.title}
               </span>
             </div>
-            <span className="text-white/30 group-hover:text-blue-400 transition-transform duration-300 group-hover:translate-x-1">
+            <span className="text-white/60 group-hover:text-blue-400 transition-transform duration-300 group-hover:translate-x-1">
               →
             </span>
           </a>
-        ))}
+          ))
+        )}
       </div>
 
       {/* View All Logs button */}
       <div className="mt-8 flex justify-end">
         <a
           href="/blog.html"
-          className="text-sm font-medium text-white/40 hover:text-white/80 transition-colors duration-200"
+          className="text-sm font-medium text-white/60 hover:text-white transition-colors duration-200"
         >
           View All Notes →
         </a>

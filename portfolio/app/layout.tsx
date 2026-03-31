@@ -44,9 +44,12 @@ export default function RootLayout({
           fontFamily: "var(--font-inter), sans-serif",
         }}
       >
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <SmoothScroll>
           <Navbar />
-          <main className="flex-1 flex flex-col w-full min-h-screen">
+          <main id="main-content" className="flex-1 flex flex-col w-full min-h-screen">
             {children}
           </main>
           <Footer />

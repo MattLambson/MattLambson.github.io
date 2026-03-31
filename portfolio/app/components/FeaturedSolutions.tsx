@@ -7,12 +7,14 @@ const featured = [
     title: "Statement of Work Builder",
     description: "Custom SoW Generator for Professional Services",
     image: "/projects/SOWBuilder.png",
+    alt: "Screenshot of Statement of Work Builder showing an interactive document editor with customizable templates and professional services configuration options",
     link: "https://mattlambson.github.io/HaloDemoPages/DemoPages/sow-builder/index.html",
   },
   {
     title: "HALO Demo Hub",
     description: "A centralized portal for team HALO demos",
     image: "/projects/HALOHub.png",
+    alt: "Screenshot of HALO Demo Hub dashboard displaying a grid of demo applications with navigation and search functionality",
     link: "https://mattlambson.github.io/HaloDemoPages/",
   },
 ];
@@ -35,7 +37,7 @@ export default function FeaturedSolutions() {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center justify-center gap-8 md:gap-10 p-12 md:p-16 h-auto min-h-[400px] md:min-h-[480px] w-full max-w-[700px] rounded-[32px] transition-all duration-300 hover:scale-[1.02] group"
+            className="no-underline flex flex-col items-center justify-center gap-8 md:gap-10 p-6 md:p-12 lg:p-16 h-auto min-h-[400px] md:min-h-[480px] w-full max-w-[700px] rounded-[32px] transition-all duration-300 hover:scale-[1.02] group"
             style={{
               background: "#1f1f22", // Clean dark gray matching reference
               border: "1px solid rgba(255, 255, 255, 0.05)",
@@ -50,10 +52,11 @@ export default function FeaturedSolutions() {
             >
               <Image
                 src={project.image}
-                alt={project.title}
+                alt={project.alt}
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-[1.05]"
-                sizes="(max-width: 768px) 400px, 480px"
+                className="object-cover transition-transform duration-300 group-hover:scale-[1.05]"
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 480px, 700px"
+                quality={85}
               />
             </div>
 
@@ -74,7 +77,7 @@ export default function FeaturedSolutions() {
       <div className="mt-8 flex justify-end">
         <a
           href="/projects.html"
-          className="text-sm font-medium text-white/40 hover:text-white/80 transition-colors duration-200"
+          className="text-sm font-medium text-white/60 hover:text-white transition-colors duration-200"
         >
           View All Projects →
         </a>

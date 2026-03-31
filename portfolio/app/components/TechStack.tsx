@@ -32,7 +32,7 @@ export default function TechStack() {
       <div className="flex flex-col gap-12">
         {stackCategories.map((cat) => (
           <div key={cat.label}>
-            <div className="text-sm text-white/50 font-semibold uppercase tracking-widest mb-5">
+            <div className="text-sm text-white/65 font-semibold uppercase tracking-widest mb-5">
               {cat.label}
             </div>
             <div className="flex flex-wrap gap-3">

@@ -15,6 +15,9 @@ export default function Home() {
 
   return (
     <main className="w-full">
+      {/* Screen reader only h1 for semantic structure */}
+      <h1 className="sr-only">Matt Lambson - Technical Consultant Portfolio</h1>
+
       {/* Scrollytelling Section — shared container for canvas + overlay */}
       <div ref={scrollContainerRef} className="relative w-full" style={{ height: "500vh" }}>
         <div className="sticky top-0 h-screen w-full overflow-hidden">
