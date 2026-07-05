@@ -1,0 +1,40 @@
+{
+  "player_id": "HC-884729",
+  "username": "ShadowViper",
+  "email": "sviper99@example.com",
+  "account_status": "Active",
+  "vip_tier": "Founder",
+  "beta_access": {
+    "status": "Granted",
+    "key": "HC-BETA-77X9-L2P",
+    "key_redeemed": false,
+    "platform": "PC"
+  },
+  "game_stats": {
+    "level": 42,
+    "guild": "Neon Syndicate",
+    "server_region": "NA-East",
+    "total_playtime_hours": 114
+  },
+  "recent_purchases": [
+    {
+      "transaction_id": "TXN-90211",
+      "item": "Founder's Pack - Tier 1",
+      "date": "2026-07-04",
+      "amount": 49.99,
+      "status": "Completed"
+    },
+    {
+      "transaction_id": "TXN-90210",
+      "item": "Founder's Pack - Tier 1",
+      "date": "2026-07-04",
+      "amount": 49.99,
+      "status": "Completed"
+    }
+  ],
+  "technical_info": {
+    "ip_address": "192.168.1.44",
+    "mac_address": "00:1A:2B:3C:4D:5E",
+    "last_login": "2026-07-05T01:30:00Z"
+  }
+}

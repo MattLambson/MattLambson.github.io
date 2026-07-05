@@ -602,7 +602,7 @@
       renderLoading();
 
       try {
-        const res = await fetch('https://dummyjson.com/c/1c9f-a1aa-492b-85fd');
+        const res = await fetch('./player-data.json');
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const user = await res.json();
         renderProfile(user);
