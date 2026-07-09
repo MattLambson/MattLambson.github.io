@@ -1,0 +1,5 @@
+# macOS
+.DS_Store
+
+# The site is built from portfolio/ and deployed via GitHub Actions.
+# Nothing should live at the repo root except portfolio/ and .github/.
