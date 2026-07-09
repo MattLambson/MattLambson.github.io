@@ -76,7 +76,7 @@ export default function FeaturedSolutions() {
       {/* View Other Projects link at the bottom right */}
       <div className="mt-8 flex justify-end">
         <a
-          href="/projects.html"
+          href="/projects"
           className="text-sm font-medium text-white/60 hover:text-white transition-colors duration-200"
         >
           View All Projects →

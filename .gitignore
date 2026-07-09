@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Claude Code / AI agent files — keep local, never push
+CLAUDE.md
+AGENTS.md
+GEMINI.md
+.claude/
+**/CLAUDE.md
+**/AGENTS.md
+**/GEMINI.md
+
+# The site is built from portfolio/ and deployed via GitHub Actions.
+# Nothing should live at the repo root except portfolio/ and .github/.
